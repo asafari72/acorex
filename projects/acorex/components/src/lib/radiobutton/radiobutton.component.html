@@ -1,0 +1,6 @@
+<label class="ax radio {{size}}" for="{{uid}}" [class.disabled]="disabled">
+  {{ label }}
+  <input (click)="handleClick()" type="radio" id="{{uid}}" [(ngModel)]="value" [ngModelOptions]="{standalone: true}"
+    [attr.disabled]="disabled ? '' : null" />
+  <span class="checkmark"></span>
+</label>

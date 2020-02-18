@@ -1,0 +1,12 @@
+<div class="ax form-item {{size}}" [attr.id]="uid">
+    <div class="content">
+        <div class="ax input {{size}}" [class.disabled]="disabled" [class.readonly]="readonly">
+            <input #input type="text" class="ax icon {{size}}" [attr.value]="value"  [attr.placeholder]="placeholder"
+                [attr.readonly]="readonly ? true : null" [attr.disabled]="disabled ? 'disabled' : null" >
+        </div>
+    </div>
+    <div class="ax buttons">
+        <ng-content select="ax-button">
+        </ng-content>
+    </div>
+</div>

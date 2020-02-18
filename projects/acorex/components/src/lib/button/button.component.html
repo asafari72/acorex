@@ -1,0 +1,7 @@
+<button #container class="ax button {{type}} {{size}}" [class.labeled]="hasLabel && icon" [class.icon]="icon" [class.disabled]="disabled"
+    (click)="handleClick($event)" [attr.disabled]="disabled ? 'disabled' : null">
+    <i *ngIf="icon" class="{{icon}} icon"></i>
+    <span #span>
+        <ng-content></ng-content>
+    </span>
+</button>

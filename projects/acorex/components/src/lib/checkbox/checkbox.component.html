@@ -1,0 +1,6 @@
+<label class="ax checkbox {{size}}" for="{{uid}}" [class.disabled]="disabled" [class.readonly]="readonly">
+  {{ label }}
+  <input (click)="handleClick()" type="checkbox" id="{{uid}}" [(ngModel)]="value" [ngModelOptions]="{standalone: true}"
+    [attr.disabled]="disabled || readonly ? '' : null"  />
+  <span class="checkmark"></span>
+</label>

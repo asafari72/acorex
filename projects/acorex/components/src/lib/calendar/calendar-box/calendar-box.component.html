@@ -1,0 +1,85 @@
+<div class="calendar-body">
+  <div class="calendar-selector">
+    <div class="arrows left-arrow" (click)="prev()">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+    <div class="selector-name" (click)="changeView()" [ngSwitch]="view">
+      <ng-container *ngSwitchCase="'day'">
+        {{viewRange.startTime.add('day',10) | dt:"MMM YYYY"}}
+      </ng-container>
+      <ng-container *ngSwitchCase="'month'">
+        {{viewRange.startTime | dt:"YYYY"}}
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+        {{viewRange.startTime | dt:"YYYY"}} - {{viewRange.endTime | dt:"YYYY"}}
+      </ng-container>
+    </div>
+    <div class="arrows right-arrow" (click)="next()">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+  </div>
+  <div class="view">
+    <ng-container [ngSwitch]="view">
+      <ng-container *ngSwitchCase="'day'">
+        <table>
+          <thead>
+            <tr class="days-name calendar-row">
+              <th class="calendar-item">SUN</th>
+              <th class="calendar-item">MON</th>
+              <th class="calendar-item">THE</th>
+              <th class="calendar-item">WED</th>
+              <th class="calendar-item">THU</th>
+              <th class="calendar-item">FRI</th>
+              <th class="calendar-item">SAT</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="calendar-row" *ngFor="let r of matrix">
+              <td class="calendar-item" *ngFor="let d of r;trackBy:trackByFn"
+                [ngClass]="{'selected': d.selected,'focused':d.focused,'today':d.today,'next-month':d.nextMonth}"
+                (click)="setDayClick($event,d.date)">
+                <div>
+                  {{d.date.dayInMonth}}
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+      <ng-container *ngSwitchCase="'month'">
+        <table>
+          <tbody>
+            <tr class="calendar-row" *ngFor="let r of matrix">
+              <td class="calendar-item month-item" *ngFor="let d of r;trackBy:trackByFn"
+                [ngClass]="{'selected': d.selected,'focused':d.focused,'today':d.today}"
+                (click)="setMonthClick($event,d.date)">
+                <div>
+                  {{d.date| dt:"MMM"}}
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+      <ng-container *ngSwitchCase="'year'">
+        <table>
+          <tbody>
+            <tr class="calendar-row" *ngFor="let r of matrix">
+              <td class="calendar-item year-item" *ngFor="let d of r;trackBy:trackByFn"
+                [ngClass]="{'selected': d.selected,'focused':d.focused,'today':d.today}"
+                (click)="setYearClick($event,d.date)">
+                <div>
+                  {{d.date | dt:"YYYY"}}
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+    </ng-container>
+  </div>
+  <div class="footer">
+    <ax-button text="Today" (onClick)="setToday()" *ngIf="showTodayButton" size="sm" type="primary-light">
+    </ax-button>
+  </div>
+</div>

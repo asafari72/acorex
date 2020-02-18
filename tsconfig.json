@@ -22,6 +22,10 @@
       "@acorex/core": [
         "dist/acorex/core/acorex-core",
         "dist/acorex/core"
+      ],
+      "@acorex/components": [
+        "dist/acorex/components/acorex-component",
+        "dist/acorex/components"
       ]
     }
   },

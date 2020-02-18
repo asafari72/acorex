@@ -1,0 +1,24 @@
+.ax-panel-box {
+  header {
+    &.default {
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      padding: var(--sp-sm-size) var(--sp-md-size);
+      font-size: var(--font-md-size);
+      background-color: var(--primary-color);
+      color: var(--white-color);
+    }
+  }
+
+  .content {
+    padding: var(--sp-sm-size) var(--sp-md-size);;
+    overflow: hidden;
+  }
+
+  .toggle {
+    cursor: pointer;
+  }
+}

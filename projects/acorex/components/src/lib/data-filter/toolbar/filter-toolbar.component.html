@@ -1,0 +1,5 @@
+<ax-toolbar-menu [items]="menuItems" (itemClick)="itemClick($event)" #menu >
+   
+</ax-toolbar-menu>
+<ax-menu target=".{{_uid}}" [items]="contextMenuItems"  direction="vertical"  #contextMenu (itemClick)="onCtxClick($event)">
+</ax-menu>

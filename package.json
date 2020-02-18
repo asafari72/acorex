@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "core": "ng build @acorex/core --watch"
+    "core": "ng build @acorex/core --watch",
+    "component": "ng build @acorex/component --watch"
   },
   "private": true,
   "dependencies": {

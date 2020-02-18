@@ -1,0 +1,41 @@
+<<<<<<< HEAD
+<ax-drop-down [size]="size" [showDropDownButton]="showDropDownButton" #d>
+=======
+<ax-drop-down [size]="size" #d [disabled]="disabled">
+>>>>>>> 2be809081811f03bcaa2e4a51e6f16f2667995d5
+    <ng-container header>
+        <div class="ax chips" *ngFor="let item of selectedItems">
+            <span>
+                {{item[textField]}}
+            </span>
+            <span (click)="handleItemClick(item)" *ngIf="readonly!=true && disabled!=true">
+                <i class="fas fa-times-circle close"></i>
+            </span>
+        </div>
+        <ax-text-box [readonly]="readonly" [disabled]="disabled" [(value)]="text" (onkey)="handleKeyEvent($event)">
+        </ax-text-box>
+        <ng-content select='ax-button'>
+        </ng-content>
+    </ng-container>
+    
+    <ng-container panel>
+        <div class="ax list-container">
+            <div style="max-height: 300px;overflow-y: auto;">
+                <ng-container *ngIf="getItems().length>0; then thenTemplate; else elseTemplate"></ng-container>
+                <ng-template #thenTemplate>
+                    <div class="list-item" [class.selected]="item.selected" *ngFor="let item of getItems()"
+                        (click)="handleItemClick(item)">
+                        {{ item[textField] }}
+                    </div>
+                </ng-template>
+                <ng-template #elseTemplate>
+                    <div class="list-item">
+                        No Result Found
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </ng-container>
+    <ng-content select="ax-button">
+    </ng-content>
+</ax-drop-down>

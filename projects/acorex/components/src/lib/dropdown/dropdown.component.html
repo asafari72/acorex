@@ -1,0 +1,20 @@
+<div class="ax form-item {{size}}" [attr.id]="uid" [class.disabled]="disabled">
+    <div class="content">
+        <ng-content select="ng-container[header]">
+        </ng-content>
+    </div>
+    <div class="ax buttons">
+        <ax-button *ngIf="showDropDownButton" icon="fas fa-angle-down icon" type="light"
+            (click)="handleArrowClick($event)">
+        </ax-button>
+        <ng-content select="ax-button">
+        </ng-content>
+    </div>
+</div>
+<ax-popover [fitParent]="fitParent" distance="10" height="'auto'" target="#{{ uid }}" placement="bottom-start"
+    alignment="top-start" #popSelectBox>
+    <div class="ax-popover-container-bordered">
+        <ng-content select="ng-container[panel]">
+        </ng-content>
+    </div>
+</ax-popover>
