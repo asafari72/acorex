@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
-import { AXButtonItem, AXBaseComponent } from '../../core';
+import { AXButtonItem, AXBaseComponent } from '@acorex/core';
 
 @Component({
   selector: 'ax-dialog',

@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild, ViewEncapsulation } from '@angular/core';
 import { AXToolbarItem, AXToolbarMenuComponent } from '../../toolbar';
-import { AXHtmlUtil, AXMenuItem } from '../../../core';
+import { AXHtmlUtil, AXMenuItem } from '@acorex/core';
 import { AXMenuComponent } from '../../menu';
 import { AXFilterPanelComponent } from '../filter-panel/filter-panel.component';
 

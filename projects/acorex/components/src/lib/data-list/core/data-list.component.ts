@@ -1,6 +1,6 @@
 import { ContentChild, Input, Directive } from "@angular/core";
 import { AXDataSourceComponent, AXDataSourceReadParams } from '../../data-source';
-import {  AXBaseComponent } from '../../../core';
+import {  AXBaseComponent } from '@acorex/core';
 
 @Directive()
 export abstract class AXDataListComponent extends AXBaseComponent {

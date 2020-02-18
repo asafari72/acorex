@@ -1,6 +1,6 @@
 import { Component, Input, NgZone, ChangeDetectorRef, ChangeDetectionStrategy, ViewEncapsulation } from "@angular/core";
 import { ElementRef } from "@angular/core";
-import { AXPlacement, AXHtmlUtil, AXPoint } from "../../core";
+import { AXPlacement, AXHtmlUtil, AXPoint } from "@acorex/core";
 
 
 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { AXDataSourceComponent } from './datasource.component';
-import { AXHttpModule } from '../../core';
+import { AXHttpModule } from '@acorex/core';
 
 @NgModule({
     declarations: [AXDataSourceComponent],

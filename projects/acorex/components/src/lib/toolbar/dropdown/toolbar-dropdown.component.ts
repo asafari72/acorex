@@ -2,7 +2,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, Attribute } from "@angular/core";
 import { AXToolbarItem } from "../toolbar-item";
 import { AXPopoverComponent } from "../../popover/popover.component";
-import { AXMenuItem, AXBaseComponent } from '../../../core';
+import { AXMenuItem, AXBaseComponent } from '@acorex/core';
 
 @Component({
   selector: "ax-toolbar-dropdown",

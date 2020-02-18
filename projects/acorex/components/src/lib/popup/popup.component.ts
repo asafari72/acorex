@@ -16,7 +16,7 @@ import {
   Output
 } from '@angular/core';
 import { ClosingEventArgs } from './popup.events';
-import { AXBaseComponent, AXBaseSizableComponent } from '../../core';
+import { AXBaseComponent, AXBaseSizableComponent } from '@acorex/core';
 export interface PopupHeaderButtons {
   id: string;
   title: string;

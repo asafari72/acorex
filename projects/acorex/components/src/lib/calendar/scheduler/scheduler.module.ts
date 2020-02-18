@@ -3,7 +3,7 @@ import { AXSchedulerComponent } from './scheduler.component';
 import { AXSchedulerViewsProperty, AXSchedulerViewProperty } from './scheduler-views.property';
 import { AXSchedulerDayTimeViewComponent } from './views/daytime/scheduler-daytime-view.component';
 import { AXToolbarSchedulerViewsComponent } from './toolbars/scheduler-toolbar-views';
-import { AXCoreModule } from '../../../core/core.module';
+import { AXCoreModule } from '@acorex/core';
 import { AXSchedulerMonthViewComponent } from './views/month/scheduler-month-view.component';
 import { PortalModule } from '@angular/cdk/portal';
 import { AXToolbarSchedulerNavigatorComponent } from './toolbars/scheduler-toolbar-navigator';

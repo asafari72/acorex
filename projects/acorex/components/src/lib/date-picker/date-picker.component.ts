@@ -2,7 +2,7 @@ import { Input, ViewChild, Output, EventEmitter, ViewEncapsulation, Component } 
 import { IValidationRuleResult } from '../validation/validation.classs';
 import { AXValidatableComponent } from '../validation/validation.directive';
 import { AXDropdownComponent } from '../dropdown';
-import { AXDateTime } from '../../core';
+import { AXDateTime } from '@acorex/core';
 
 
 @Component({

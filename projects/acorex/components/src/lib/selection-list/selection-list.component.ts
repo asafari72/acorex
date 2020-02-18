@@ -1,7 +1,7 @@
 import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef, ViewEncapsulation, EventEmitter } from '@angular/core';
 import { Output } from '@angular/core';
-import { AXBaseSizableComponent, AXBaseValueComponent, AXBaseComponent, AXElementSize } from '../../core';
-import { AXSelectionList } from '../../core/classes/sectionlist.class';
+import { AXBaseSizableComponent, AXBaseValueComponent, AXBaseComponent, AXElementSize } from '@acorex/core';
+import { AXSelectionList } from '@acorex/core';
 
 @Component({
   selector: 'ax-selection-list',

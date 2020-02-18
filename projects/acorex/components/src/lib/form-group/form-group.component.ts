@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ChangeDetectorRef, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
-import { AXBaseSizableComponent, AXBaseComponent, AXElementSize } from '../../core';
+import { AXBaseSizableComponent, AXBaseComponent, AXElementSize } from '@acorex/core';
 
 @Component({
     selector: 'ax-form-group',

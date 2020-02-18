@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
-import { AXBaseTextComponent } from '../../core';
+import { AXBaseTextComponent } from '@acorex/core';
 import { AXValidationComponent } from '../validation';
 
 @Component({

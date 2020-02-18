@@ -23,7 +23,7 @@ import { AXToolbarSchedulerNavigatorComponent } from './toolbars/scheduler-toolb
 import { AXSchedulerAgendaViewComponent } from './views/agenda/scheduler-agenda-view.component';
 import { AXSchedulerTimelineViewComponent } from './views/timeline/scheduler-timeline-view.component';
 import { AXSchedulerEventChangeArgs, AXSchedulerEvent } from './scheduler.class';
-import { AXMenuItem, AXDateTime } from '../../../core';
+import { AXMenuItem, AXDateTime } from '@acorex/core';
 import { AXToolbarSearchComponent } from '../../toolbar';
 import { AXDataSourceComponent } from '../../data-source';
 

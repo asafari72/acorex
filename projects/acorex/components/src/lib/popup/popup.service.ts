@@ -1,7 +1,7 @@
 import { Injectable, ComponentRef } from '@angular/core';
 import { AXPopupComponent } from './popup.component';
 import { ClosingAction, ClosedEventArgs, ClosingEventArgs } from './popup.events';
-import { AXRenderService } from '../../core';
+import { AXRenderService } from '@acorex/core';
 
 export class AXPopupResult {
   private _executor: (

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ElementRef, ChangeDetectorRef, ViewEncapsulation } from '@angular/core';
 import { AXSchedulerBaseViewComponent } from '../scheduler-view.component';
-import { AXDateTime, AXDateTimeRange } from '../../../../../core/calendar/datetime';
+import { AXDateTime, AXDateTimeRange } from '@acorex/core';
 import { AXSchedulerSlot } from '../../scheduler.class';
 
 @Component({

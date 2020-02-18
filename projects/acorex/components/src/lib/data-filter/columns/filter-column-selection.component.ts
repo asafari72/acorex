@@ -1,6 +1,6 @@
 import { Component, Input, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { AXFilterCondition, AXFilterColumnComponent } from '../filter.class';
-import { AXCheckItem } from '../../../core';
+import { AXCheckItem } from '@acorex/core';
 
 @Component({
     selector: 'ax-filter-column-selection',

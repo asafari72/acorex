@@ -1,5 +1,5 @@
 import { Input, EventEmitter, OnDestroy } from '@angular/core';
-import { AXDateTime, AXDateTimeRange, TimeUnit } from '../../../../core/calendar/datetime';
+import { AXDateTime, AXDateTimeRange, TimeUnit } from '@acorex/core';
 import { Output, Directive } from '@angular/core';
 import { AXSchedulerSlot, AXSchedulerEventChangeArgs, AXSchedulerEvent, AXSchedulerViewType } from '../scheduler.class';
 

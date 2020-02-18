@@ -12,7 +12,7 @@ import {
     AXBaseValueComponent,
     AXElementSize,
     AXBaseComponent
-} from '../../core';
+} from '@acorex/core';
 
 @Component({
     selector: 'ax-switch',

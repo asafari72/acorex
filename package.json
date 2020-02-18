@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "core": "ng build @acorex/core --watch",
-    "component": "ng build @acorex/component --watch"
+    "components": "ng build @acorex/components --watch"
   },
   "private": true,
   "dependencies": {

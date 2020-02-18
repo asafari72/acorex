@@ -14,7 +14,7 @@ import {
 } from "@angular/core";
 import { Observable } from "rxjs";
 import { distinctUntilChanged, debounceTime } from "rxjs/operators";
-import { AXPlacement, AXMenuItem, AXHtmlUtil, AXIPoint } from '../../core';
+import { AXPlacement, AXMenuItem, AXHtmlUtil, AXIPoint } from '@acorex/core';
 
 @Component({
   selector: "ax-menu",

@@ -7,7 +7,7 @@ import { AXFilterColumnSelectionComponent } from './columns/filter-column-select
 import { AXFilterColumnDateComponent } from './columns/filter-column-date.component';
 import { AXFilterColumnNumberComponent } from './columns/filter-column-number.component';
 import { AXToolbarFilterViewComponent } from './toolbar/filter-toolbar.component';
-import { AXCoreModule } from '../../core';
+import { AXCoreModule } from '@acorex/core';
 import { AXCheckBoxModule } from '../checkbox';
 import { AXTextBoxModule } from '../textbox';
 import { AXValidationModule } from '../validation';

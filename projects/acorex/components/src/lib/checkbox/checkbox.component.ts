@@ -7,7 +7,7 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef
 } from '@angular/core';
-import { AXBaseComponent, AXBaseSizableComponent, AXBaseValueComponent, AXElementSize } from '../../core';
+import { AXBaseComponent, AXBaseSizableComponent, AXBaseValueComponent, AXElementSize } from '@acorex/core';
 
 @Component({
   selector: 'ax-check-box',

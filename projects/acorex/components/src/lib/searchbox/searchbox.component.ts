@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { AXBaseTextComponent } from '../../core';
+import { AXBaseTextComponent } from '@acorex/core';
 
 @Component({
     selector: 'ax-search-box',

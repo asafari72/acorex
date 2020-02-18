@@ -10,9 +10,8 @@ import {
 } from '@angular/core';
 import { AXDropdownComponent } from '../dropdown';
 import { AXDataListComponent } from '../data-list';
-import { AXBaseSizableComponent, AXElementSize, AXBaseInputComponent } from '../../core';
+import { AXBaseSizableComponent, AXElementSize, AXBaseInputComponent } from '@acorex/core';
 import { AXTextBoxComponent } from '../textbox';
-import { runInThisContext } from 'vm';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 

@@ -14,7 +14,7 @@ import {
 } from "@angular/core";
 import { AXToolbarItem } from "../toolbar-item";
 import { AXMenuComponent } from "../../menu/menu.component";
-import { AXMenuItem } from '../../../core';
+import { AXMenuItem } from '@acorex/core';
 
 @Component({
   selector: "ax-toolbar-menu",

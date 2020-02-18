@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, ViewChild, Input } from '@angular/core';
-import { AXElementSize, AXBaseDropdownComponent } from '../../core';
+import { AXElementSize, AXBaseDropdownComponent } from '@acorex/core';
 import { AXPopoverComponent } from '../popover';
 
 @Component({

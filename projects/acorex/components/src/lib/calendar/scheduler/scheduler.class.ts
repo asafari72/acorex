@@ -1,4 +1,4 @@
-import { AXDateTime, AXDateTimeRange } from '../../../core';
+import { AXDateTime, AXDateTimeRange } from '@acorex/core';
 import { EventEmitter } from '@angular/core';
 
 

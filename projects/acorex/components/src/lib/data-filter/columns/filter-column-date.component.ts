@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, ChangeDetectorRef, ViewChild, EventEmitter, Output } from '@angular/core';
 import { AXFilterCondition, AXFilterColumnComponent } from '../filter.class';
 import { AXSelectionListComponent } from '../../selection-list';
-import { AXDateTime } from '../../../core';
+import { AXDateTime } from '@acorex/core';
 
 @Component({
     selector: 'ax-filter-column-date',

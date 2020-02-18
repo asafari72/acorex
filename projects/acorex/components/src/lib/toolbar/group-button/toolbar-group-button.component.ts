@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { AXToolbarItem } from "../toolbar-item";
-import { AXBaseMenuItem } from '../../../core';
+import { AXBaseMenuItem } from '@acorex/core';
 
 @Component({
   selector: "ax-toolbar-group-button",

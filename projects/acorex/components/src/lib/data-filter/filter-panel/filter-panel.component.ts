@@ -2,7 +2,7 @@ import { Component, Input, ViewChild, ViewChildren, QueryList, ViewEncapsulation
 import { AXFilterColumnGroup, AXFilterColumnComponent, AXFilterCondition, AXFilterPredefined } from '../filter.class';
 import { AXMenuComponent } from '../../menu';
 import { AXTextBoxComponent } from '../../textbox';
-import { AXMenuItem, AXHtmlUtil, AXKeyboardEvent } from '../../../core';
+import { AXMenuItem, AXHtmlUtil, AXKeyboardEvent } from '@acorex/core';
 import { AXToastService } from '../../toast';
 
 

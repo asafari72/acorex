@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AXCalendarBoxComponent } from './calendar-box.component';
-import { AXCoreModule } from '../../../core/core.module';
+import { AXCoreModule } from '@acorex/core';
 import { AXButtonModule } from '../../button';
 import { AXPopoverModule } from '../../popover';
 
