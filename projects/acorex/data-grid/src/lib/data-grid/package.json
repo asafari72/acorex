@@ -1,0 +1,14 @@
+{
+  "name": "data-grid",
+  "version": "1.0.0",
+  "ngPackage": {
+    "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
+    "lib": {
+      "entryFile": "index.ts"
+    },
+    "dest": "../../../../../../dist/acorex-ui/lib/components/data-grid"
+  },
+  "devDependencies": {
+    "ng-packagr": "^9.0.0"
+  }
+}

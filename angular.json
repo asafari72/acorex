@@ -203,6 +203,46 @@
           }
         }
       }
+    },
+    "@acorex/data-grid": {
+      "projectType": "library",
+      "root": "projects/acorex/data-grid",
+      "sourceRoot": "projects/acorex/data-grid/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/acorex/data-grid/tsconfig.lib.json",
+            "project": "projects/acorex/data-grid/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/acorex/data-grid/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/acorex/data-grid/src/test.ts",
+            "tsConfig": "projects/acorex/data-grid/tsconfig.spec.json",
+            "karmaConfig": "projects/acorex/data-grid/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/acorex/data-grid/tsconfig.lib.json",
+              "projects/acorex/data-grid/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "acorex"
 }

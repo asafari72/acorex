@@ -26,6 +26,10 @@
       "@acorex/components": [
         "dist/acorex/components/acorex-component",
         "dist/acorex/components"
+      ],
+      "@acorex/data-grid": [
+        "dist/acorex/data-grid/acorex-data-grid",
+        "dist/acorex/data-grid"
       ]
     }
   },

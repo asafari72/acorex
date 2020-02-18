@@ -1,0 +1,15 @@
+<div style="height: 500px;">
+    <ax-data-grid #grid>
+        <ax-data-source [provideData]="provideData">
+        </ax-data-source>
+        <ax-selection-column></ax-selection-column>
+        <ax-text-column field="name" caption="Name" [width]="95"></ax-text-column>
+        <ax-text-column field="lastname" caption="Lastname" [width]="60"></ax-text-column>
+        <ax-text-column field="age" caption="Age" [width]="85"></ax-text-column>
+        <ax-text-column field="phone" caption="Phone Numbaer" [width]="85"></ax-text-column>
+        <ax-command-column [items]="commandItems" (itemClick)="onCommandItemClick($event)"></ax-command-column>
+    </ax-data-grid>
+</div>
+
+
+

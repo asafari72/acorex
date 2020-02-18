@@ -1,0 +1,44 @@
+<ax-select-box [showDropDownButton]="false" size="md" textField="title" valueField="id" groupField="category"
+    mode="multiple" (selectedItemsChange)="handleSelectChange($event)" [selectedValues]="selectedValues">
+    <ax-data-source [provideData]="handleDataReceived">
+    </ax-data-source>
+    <ax-button icon="fas fa-list-ul icon" type="light" (click)="handleButtonClick()"></ax-button>
+</ax-select-box>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="ax-lov-box" [style.display]="mode=='hidden' ? 'none':'unset'">
+    <div class="ax-field-set">
+        <div class="ax-field-set-wrapper" [ngClass]="{ 'no-label': !label }">
+            <fieldset [ngClass]="{ 'input-focused': isFocused, 'input-error': errorText }">
+                <legend *ngIf="label">
+                    {{ label }}
+                </legend>
+            </fieldset>
+            <input type="text" [(ngModel)]="text" [placeholder]="placeholder" (keyup)="handleKeyEvent($event)"
+                (blur)="handleBlurEvent($event)" (focus)="handleFocusEvent($event)" class="ax-text-box" disabled />
+            <div class="ax-field-set-button">
+                <button *ngIf="text && showClear" type="button" class="btn btn-light" (click)="clearText()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button type="button" class=" btn btn-primary" (click)="handleButtonClick($event)">
+                    <i class="fas fa-check-circle"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="validation-text" *ngIf="errorText">
+        {{ errorText }}
+    </div>
+
+</div> -->
