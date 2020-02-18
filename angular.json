@@ -123,6 +123,46 @@
           }
         }
       }
+    },
+    "@acorex/core": {
+      "projectType": "library",
+      "root": "projects/acorex/core",
+      "sourceRoot": "projects/acorex/core/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/acorex/core/tsconfig.lib.json",
+            "project": "projects/acorex/core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/acorex/core/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/acorex/core/src/test.ts",
+            "tsConfig": "projects/acorex/core/tsconfig.spec.json",
+            "karmaConfig": "projects/acorex/core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/acorex/core/tsconfig.lib.json",
+              "projects/acorex/core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "acorex"
 }
