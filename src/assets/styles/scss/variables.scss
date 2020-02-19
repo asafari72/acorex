@@ -1,0 +1,109 @@
+$color-suffix: color;
+$size-suffix: size;
+
+$white: #fff;
+$black: #000;
+$primary: #2196f3;
+$secondary: #aa00ff;
+$gray: #9e9e9e;
+$success: #66bb6a;
+$info: #3f51b5;
+$warning: #ffc107;
+$danger: #e53935;
+$shadow: rgba(0, 0, 0, 0.1);
+
+$colors: (
+  "white": $white,
+  "black": $black,
+  "trans-white": transparentize($white, 0.85),
+  "trans-black": transparentize($black, 0.85),
+  "primary": (
+    "": $primary,
+    "fore": $white,
+    "light": lighten($primary, 7%),
+    "dark": darken($primary, 7%),
+    "trans-dark": transparentize($primary, 0.85),
+    "trans-light": transparentize($primary, 0.85)
+  ),
+  "secondary": (
+    "": $secondary,
+    "fore": $white,
+    "light": lighten($secondary, 15%),
+    "dark": darken($secondary, 7%),
+    "trans-dark": transparentize($secondary, 0.85),
+    "trans-light": transparentize($secondary, 0.85)
+  ),
+  "info": (
+    "": $info,
+    "fore": $white,
+    "light": lighten($info, 15%),
+    "dark": darken($info, 15%),
+    "trans-dark": transparentize($info, 0.85),
+    "trans-light": transparentize($info, 0.85)
+  ),
+  "success": (
+    "": $success,
+    "fore": $white,
+    "light": lighten($success, 15%),
+    "dark": darken($success, 15%),
+    "trans-dark": transparentize($success, 0.85),
+    "trans-light": transparentize($success, 0.85)
+  ),
+  "warning": (
+    "": $warning,
+    "fore": $white,
+    "light": lighten($warning, 15%),
+    "dark": darken($warning, 15%),
+    "trans-dark": transparentize($warning, 0.85),
+    "trans-light": transparentize($warning, 0.85)
+  ),
+  "danger": (
+    "": $danger,
+    "fore": $white,
+    "light": lighten($danger, 15%),
+    "dark": darken($danger, 15%),
+    "trans-dark": transparentize($danger, 0.85),
+    "trans-light": transparentize($danger, 0.85)
+  ),
+  "gray": (
+    "": $gray,
+    "fore": $black,
+    "light": lighten($gray, 15%),
+    "dark": darken($gray, 15%),
+    "trans-dark": transparentize($gray, 0.85),
+    "trans-light": transparentize($gray, 0.85)
+  ),
+  "light": (
+    "": $white,
+    "fore": $black,
+    "light": lighten($white, 15%),
+    "dark": darken($white, 15%),
+    "trans-dark": transparentize($white, 0.85),
+    "trans-light": transparentize($white, 0.85)
+  ),
+  "dark": (
+    "": $black,
+    "fore": $white,
+    "light": lighten($black, 15%),
+    "dark": darken($black, 15%),
+    "trans-dark": transparentize($black, 0.85),
+    "trans-light": transparentize($black, 0.85)
+  )
+);
+
+$sizes: (
+  "": (
+    xxs: 0.4rem,
+    xs: 0.6rem,
+    sm: 0.8rem,
+    md: 1rem,
+    lg: 1.2rem,
+    xl: 1.4rem,
+    xxl: 1.6rem
+  ),
+  "border": (
+    width: 1px,
+    radius: 4px,
+    circle: 50px
+  )
+);

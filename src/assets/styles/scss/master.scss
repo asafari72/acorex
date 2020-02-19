@@ -1,0 +1,78 @@
+@import "./variables.scss";
+
+:root {
+
+  --ax-border-color: rgba(34, 36, 38, 0.15);
+  --ax-border-dark-color: rgba(34, 36, 38, 0.30);
+
+  // Create Sizes
+  @each $name, $size in $sizes {
+    @if type-of($size) == "map" {
+      @each $subname, $variant in $size {
+        @if $name == "" {
+          --ax-size-#{$name}#{$subname}: #{$variant};
+        } @else {
+          --ax-size-#{$name}-#{$subname}: #{$variant};
+        }
+      }
+    }
+  }
+
+  // Create Colors
+  @each $name, $color in $colors {
+    @if type-of($color) == "map" {
+      @each $subname, $variant in $color {
+        @if $subname== "" {
+          --ax-#{$name}-#{$color-suffix}: #{$variant};
+        } @else {
+          --ax-#{$name}-#{$subname}-#{$color-suffix}: #{$variant};
+        }
+      }
+    } @else {
+      --ax-#{$name}-#{$color-suffix}: #{$color};
+    }
+  }
+}
+//
+
+@each $name, $size in $sizes {
+  .ax {
+    @if type-of($size) == "map" {
+      @each $subname, $variant in $size {
+        @if $name == "" {
+          &.#{$subname} {
+            font-size: var(--ax-size-#{$subname}) !important;
+          }
+        }
+      }
+    }
+  }
+}
+// Create Classes
+@each $name, $color in $colors {
+  .ax {
+    @if type-of($color) == "map" {
+      @each $subname, $variant in $color {
+        @if $subname== "" {
+          &.#{$name} {
+            &.button {
+              color: var(--ax-#{$name}-fore-#{$color-suffix});
+              background-color: var(--ax-#{$name}-#{$color-suffix});
+              border-width: 1px;
+              border-style: solid;
+              border-color: var(--ax-#{$name}-#{$color-suffix});
+              &:hover {
+                background-color: var(--ax-#{$name}-light-#{$color-suffix});
+                border-color: var(--ax-#{$name}-light-#{$color-suffix});
+              }
+              &:focus {
+                background-color: var(--ax-#{$name}-dark-#{$color-suffix});
+                border-color: var(--ax-#{$name}-dark-#{$color-suffix});
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
