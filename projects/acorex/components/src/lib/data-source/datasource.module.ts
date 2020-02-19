@@ -4,7 +4,7 @@ import { AXHttpModule } from '@acorex/core';
 
 @NgModule({
     declarations: [AXDataSourceComponent],
-    imports: [AXHttpModule],
+    imports: [],
     exports: [AXDataSourceComponent],
     providers: [],
 })

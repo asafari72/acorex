@@ -7,10 +7,10 @@ import { Component, OnInit, Input, ElementRef, ViewEncapsulation } from "@angula
 })
 export class AXToastMessageComponent implements OnInit {
   constructor(private elRef: ElementRef) {}
-  @Input() title: string;
+  @Input() title: string = '';
   @Input() message: string;
   @Input() timeOut: number = 2000;
-  @Input() closeable: boolean;
+  @Input() closeable: boolean = false;
 
   @Input() type: "info" | "success" | "warning" | "error" = "info";
 

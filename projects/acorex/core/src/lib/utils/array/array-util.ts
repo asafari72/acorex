@@ -1,6 +1,6 @@
 import { AXFetchProp } from '../object/object-util';
 
-
+// @dynamic
 export class AXArrayUtil {
 
 

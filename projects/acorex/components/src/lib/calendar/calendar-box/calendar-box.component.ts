@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef, Attribute } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { AXDateTime, CalendarType, AXDateTimeRange } from '@acorex/core';
 
 export type AXCalendarViewType = 'year' | 'month' | 'day';
