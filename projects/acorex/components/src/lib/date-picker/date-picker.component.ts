@@ -1,9 +1,6 @@
 import { Input, ViewChild, Output, EventEmitter, ViewEncapsulation, Component } from '@angular/core';
-import { IValidationRuleResult } from '../validation/validation.classs';
-import { AXValidatableComponent } from '../validation/validation.directive';
 import { AXDropdownComponent } from '../dropdown';
-import { AXDateTime } from '@acorex/core';
-
+import { AXDateTime,AXValidationRuleResult,AXValidatableComponent} from '@acorex/core';
 
 @Component({
     selector: 'ax-date-picker',
@@ -15,8 +12,11 @@ import { AXDateTime } from '@acorex/core';
     ]
 })
 export class AXDatePickerComponent extends AXValidatableComponent {
-
-
+    validate(): Promise<any> {
+        throw new Error("Method not implemented.");
+    }
+    readonly: boolean;
+    disabled: boolean;
     @ViewChild('dropdown', { static: true })
     dropdown: AXDropdownComponent;
     @Input() placeholder: string = '';
@@ -61,26 +61,27 @@ export class AXDatePickerComponent extends AXValidatableComponent {
     }
 
 
-    validate(): Promise<IValidationRuleResult> {
+    // validate(): Promise<AXValidationRuleResult> {
 
-        return new Promise<IValidationRuleResult>(resolve => {
-            if (!this.validator) {
-                resolve({ result: true });
-            } else {
-                // this.validator.validate(this.model).then(r => {
-                //     r.target = this;
-                //     if (r.result) {
-                //         this.errorText = null;
-                //     } else {
-                //         this.errorText = r.message;
-                //     }
-                //     resolve(r);
-                // });
+    //     return new Promise<AXValidationRuleResult>(resolve => {
+    //         if (!this.validator) {
+    //             resolve({ result: true });
+    //         } else {
+    //             // this.validator.validate(this.model).then(r => {
+    //             //     r.target = this;
+    //             //     if (r.result) {
+    //             //         this.errorText = null;
+    //             //     } else {
+    //             //         this.errorText = r.message;
+    //             //     }
+    //             //     resolve(r);
+    //             // });
 
-                resolve()
-            }
-        });
-    }
+    //             resolve()
+    //         }
+    //     });
+    // }
+
     onDateChange(date: AXDateTime) {
         this.dropdown.close();
     }

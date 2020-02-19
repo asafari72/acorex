@@ -1,5 +1,6 @@
 import { AXHtmlUtil } from '../utils';
-import { Input, Output, EventEmitter, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
+import { Input, Output, EventEmitter, ChangeDetectorRef, ViewChild, ElementRef, ContentChild } from '@angular/core';
+import { AXValidation } from '../validation';
 
 export type AXElementSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
@@ -33,7 +34,17 @@ export interface AXBaseClickableComponent extends AXBaseInteractiveComponent {
   click: EventEmitter<MouseEvent>;
 }
 
-export abstract class AXBaseTextComponent extends AXBaseComponent implements AXBaseSizableComponent, AXBaseValueComponent<string> {
+export abstract class AXValidatableComponent extends AXBaseComponent implements AXBaseValueComponent<any>  {
+  abstract valueChange: EventEmitter<any>;
+  abstract value: any;
+  abstract readonly: boolean;
+  abstract focus();
+  abstract disabled: boolean;
+  @ContentChild(AXValidation)
+  validator: AXValidation;
+}
+
+export abstract class AXBaseTextComponent extends AXValidatableComponent implements AXBaseSizableComponent, AXBaseValueComponent<string> {
 
   ngAfterViewInit() {
     this.input.nativeElement.onkeyup = (e) => {

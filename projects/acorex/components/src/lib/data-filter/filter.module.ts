@@ -9,7 +9,7 @@ import { AXFilterColumnNumberComponent } from './columns/filter-column-number.co
 import { AXToolbarFilterViewComponent } from './toolbar/filter-toolbar.component';
 import { AXCheckBoxModule } from '../checkbox';
 import { AXTextBoxModule } from '../textbox';
-import { AXValidationModule } from '../validation';
+import { AXValidationModule } from '@acorex/core';
 import { AXToolbarModule } from '../toolbar';
 import { AXMenuModule } from '../menu';
 import { AXSelectionListModule } from '../selection-list';

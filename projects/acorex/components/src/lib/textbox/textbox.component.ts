@@ -1,6 +1,5 @@
 import { Component, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
-import { AXBaseTextComponent } from '@acorex/core';
-import { AXValidationComponent } from '../validation';
+import { AXBaseTextComponent,AXValidationComponent } from '@acorex/core';
 
 @Component({
     selector: 'ax-text-box',
