@@ -12,7 +12,7 @@ import {
   IAfterGuiAttachedParams
 } from 'ag-grid-community';
 import { IFilterAngularComp } from 'ag-grid-angular';
-import { AXTextBoxComponent } from '../../textbox';
+import { AXTextBoxComponent } from '@acorex/components';
 
 
 @Component({

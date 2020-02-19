@@ -14,7 +14,7 @@ import {
     AXRadioButtonModule,
     AXSelectionListModule,
     AXPopupModule
-} from 'acorex-ui';
+} from '@acorex/components';
 
 const MODULES = [
     AXTextBoxModule,

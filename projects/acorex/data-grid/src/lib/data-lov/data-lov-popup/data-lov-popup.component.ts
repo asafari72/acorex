@@ -2,8 +2,8 @@ import { Component, OnInit, Input, EventEmitter, Output, ViewChild } from '@angu
 //import { AXBasePageComponent } from '../../../nav/page.component'
 import { AXDataGridComponent } from '../../data-grid/datagrid.component';
 import { AXGridDataColumn } from '../../data-grid/columns/column.component';
-import { AXDataSourceComponent } from '../../data-source/datasource.component';
-import { AXBasePageComponent } from '../../../core';
+import { AXDataSourceComponent } from '@acorex/components';
+import { AXBasePageComponent } from '@acorex/core';
 @Component({
     templateUrl: './data-lov-popup.component.html',
     styleUrls: ['./data-lov-popup.component.scss']

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SelectPage } from './select.page';
-import { AXDataSourceModule, AXSelectBoxModule, AXButtonModule } from 'acorex-ui';
+import { AXDataSourceModule, AXSelectBoxModule, AXButtonModule } from '@acorex/components';
 
 @NgModule({
   imports: [

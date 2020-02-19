@@ -4,6 +4,13 @@
   "peerDependencies": {
     "@angular/common": "^9.0.1",
     "@angular/core": "^9.0.1",
+    "ag-grid-angular": "^22.1.1",
+    "ag-grid-community": "^22.1.1",
+    "ag-grid-enterprise": "^22.1.1",
     "tslib": "^1.10.0"
+  },
+  "dependencies": {
+    "ag-grid-angular": "^22.1.1",
+    "ag-grid-community": "^22.1.1"
   }
 }

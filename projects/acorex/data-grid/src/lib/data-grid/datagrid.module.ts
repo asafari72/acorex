@@ -3,20 +3,20 @@ import { CommonModule } from '@angular/common';
 import { AXDataGridComponent } from './datagrid.component';
 import { FormsModule } from '@angular/forms';
 import { AgGridModule } from 'ag-grid-angular';
-import { AXDataSourceModule } from '../data-source/datasource.module';
+import { AXDataSourceModule } from '@acorex/components';
 import { AXGridTextColumn, TextFilterRenderer } from './columns/text-column.component';
 import { AXGridCheckColumn, BooleanRenderer, BooleanFilterRenderer } from './columns/check-column.component';
-import { AXCoreModule } from '../../core';
+import { AXCoreModule } from '@acorex/core';
 import { AXGridSelectionColumn } from './columns/selection-column.component';
 import { CommandRenderer, AXGridCommandColumn } from './columns/command-column.component';
 import { AXDataGridFilterComponent } from './filters/filter.component';
 import { AXGridDateColumn } from './columns/date-column.component';
 import { AXDataGridRowTemplateComponent, AXDataGridRowTemplateRenderer } from './templates/row-template.component'
 import { AXDataGridCellTemplateComponent, AXDataGridCellTemplateRenderer } from './templates/cell-template.component'
-import { AXTextBoxModule } from '../textbox/textbox.module';
-import { AXCheckBoxModule } from '../checkbox';
-import { AXSelectBoxModule } from '../selectbox';
-import { AXButtonModule } from '../button';
+import { AXTextBoxModule } from '@acorex/components';
+import { AXCheckBoxModule } from '@acorex/components';
+import { AXSelectBoxModule } from '@acorex/components';
+import { AXButtonModule } from '@acorex/components';
 import 'ag-grid-enterprise';
 
 @NgModule({

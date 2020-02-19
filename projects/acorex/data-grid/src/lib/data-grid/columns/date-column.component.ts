@@ -5,7 +5,7 @@ import {
   Input
 } from '@angular/core';
 import { AXGridDataColumn } from './column.component';
-import { AXDateTime } from '../../../core';
+import { AXDateTime } from '@acorex/core';
 
 @Component({
   selector: 'ax-date-column',

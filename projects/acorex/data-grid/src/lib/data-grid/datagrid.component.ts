@@ -9,9 +9,9 @@ import {
   Output,
   TemplateRef
 } from '@angular/core';
-import { AXDataSourceComponent } from '../data-source/datasource.component';
+import { AXDataSourceComponent } from '@acorex/components';
 import { AXGridDataColumn } from './columns/column.component';
-import { AXDataSourceReadParams } from '../data-source/read-param';
+import { AXDataSourceReadParams } from '@acorex/components';
 import {
   GridOptions,
   CellClickedEvent,
@@ -28,7 +28,7 @@ import {
 } from './datagrid.events';
 
 import { AXDataGridRowTemplateComponent } from './templates/row-template.component';
-import { AXToolbarSearchComponent, AXToolbarComponent } from '../toolbar';
+import { AXToolbarSearchComponent, AXToolbarComponent } from '@acorex/components';
 
 @Component({
   selector: 'ax-data-grid',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AXDataSourceReadParams } from 'acorex-ui';
+import { AXDataSourceReadParams } from '@acorex/components';
 
 @Component({
   templateUrl: './select.page.html'

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PopupPage } from './popup.page';
-import { AXButtonModule } from 'acorex-ui';
+import { AXButtonModule } from '@acorex/components';
 
 @NgModule({
     declarations: [PopupPage],

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { AXBaseSizableComponent, AXBaseInputComponent, AXElementSize } from '../../core';
-import { AXPopupService } from '../popup';
-import { AXDataSourceReadParams } from '../data-source';
+import { AXBaseSizableComponent, AXBaseInputComponent, AXElementSize } from '@acorex/core';
+import { AXPopupService } from '@acorex/components';
+import { AXDataSourceReadParams } from '@acorex/components';
 @Component({
     selector: 'ax-lov',
     templateUrl: './data-lov.component.html',

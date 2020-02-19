@@ -3,5 +3,9 @@
   "dest": "../../../dist/acorex/data-grid",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "ag-grid-community",
+    "ag-grid-angular"
+  ]
 }

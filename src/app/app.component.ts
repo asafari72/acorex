@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AXDataSourceReadParams } from 'acorex-ui';
+import { AXDataSourceReadParams } from '@acorex/components';
 @Component({
   selector: 'app-root',
   template: `<router-outlet></router-outlet>`

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AXMenuItem } from 'acorex-ui';
+import { AXMenuItem } from '@acorex/core';
 
 @Component({
     templateUrl: './dataGrid.page.html',

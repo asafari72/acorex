@@ -10,7 +10,7 @@ import {
 import { ICellRendererAngularComp } from 'ag-grid-angular/dist/interfaces';
 import { ICellRendererParams } from 'ag-grid-community';
 import { AXGridRowCommandEvent } from '../datagrid.events';
-import { AXMenuItem } from '../../../core';
+import { AXMenuItem } from '@acorex/core';
 
 @Component({
   selector: 'ax-command-column',

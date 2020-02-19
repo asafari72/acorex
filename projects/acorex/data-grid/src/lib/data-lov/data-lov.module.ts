@@ -4,10 +4,10 @@ import { AXLOVComponent } from './data-lov.component';
 import { FormsModule } from '@angular/forms';
 import { AXDataLovPopupComponent } from './data-lov-popup/data-lov-popup.component';
 import { AXDataGridModule } from '../data-grid/datagrid.module';
-import { AXDataSourceModule } from '../data-source/datasource.module';
-import { AXButtonModule } from '../button';
-import { AXToolbarModule } from '../toolbar';
-import { AXSelectBoxModule } from '../selectbox';
+import { AXDataSourceModule } from '@acorex/components';
+import { AXButtonModule } from '@acorex/components';
+import { AXToolbarModule } from '@acorex/components';
+import { AXSelectBoxModule } from '@acorex/components';
 
 @NgModule({
     declarations: [AXLOVComponent, AXDataLovPopupComponent],
