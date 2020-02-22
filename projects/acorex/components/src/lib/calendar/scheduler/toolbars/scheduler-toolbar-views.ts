@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter, ViewChild } from '@angular/core';
 import { AXToolbarItem, AXToolbarMenuComponent } from '../../../toolbar';
-import { AXMenuItem } from 'projects/acorex-ui/src/lib/core';
+import { AXMenuItem } from '@acorex/core';
 
 
 

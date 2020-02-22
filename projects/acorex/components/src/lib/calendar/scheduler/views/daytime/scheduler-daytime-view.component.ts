@@ -1,7 +1,7 @@
 import { Component, ElementRef, ChangeDetectorRef, ViewEncapsulation } from '@angular/core';
 import { AXSchedulerBaseViewComponent } from '../scheduler-view.component';
 import { AXSchedulerSlot, AXSchedulerEvent } from '../../scheduler.class';
-import { AXDateTime, AXDateTimeRange } from 'projects/acorex-ui/src/lib/core';
+import { AXDateTime, AXDateTimeRange } from '@acorex/core';
 
 @Component({
     templateUrl: './scheduler-daytime-view.component.html',

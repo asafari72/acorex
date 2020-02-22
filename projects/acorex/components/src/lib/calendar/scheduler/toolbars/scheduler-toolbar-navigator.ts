@@ -5,7 +5,7 @@ import { AXSchedulerViewType } from '../scheduler.class';
 import { AXCalendarBoxComponent } from '../../calendar-box/calendar-box.component';
 import { AXToolbarItem, AXToolbarMenuComponent } from '../../../toolbar';
 import { AXPopoverComponent } from '../../../popover';
-import { AXMenuItem, AXDateTime, AXDateTimeRange } from 'projects/acorex-ui/src/lib/core';
+import { AXMenuItem, AXDateTime, AXDateTimeRange } from '@acorex/core';
 
 
 @Component({
