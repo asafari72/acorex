@@ -10,7 +10,9 @@
     "e2e": "ng e2e",
     "core": "ng build @acorex/core --watch",
     "components": "ng build @acorex/components --watch",
-    "data-grid": "ng build @acorex/data-grid --watch"
+    "data-grid": "ng build @acorex/data-grid --watch",
+    "layout": "ng build @acorex/layout --watch"
+
   },
   "private": true,
   "dependencies": {

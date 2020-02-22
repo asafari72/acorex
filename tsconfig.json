@@ -30,6 +30,10 @@
       "@acorex/data-grid": [
         "dist/acorex/data-grid/acorex-data-grid",
         "dist/acorex/data-grid"
+      ],
+      "@acorex/layout": [
+        "dist/acorex/layout/acorex-layout",
+        "dist/acorex/layout"
       ]
     }
   },
