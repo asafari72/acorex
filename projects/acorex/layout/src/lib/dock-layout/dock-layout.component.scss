@@ -1,13 +1,16 @@
-.rtl {
-  .lm_header .lm_tab .lm_close_tab {
-    left: 4px !important;
-    right: inherit !important;
-  }
-  .lm_tab {
-    padding: 0px 17px 0 17px!important;
-  }
-}
 .layoutContainer {
   width: 100%;
   height: 100%;
+}
+
+.lm_header .lm_tab .lm_close_tab {
+    [dir="rtl"] & {
+      left: 4px !important;
+      right: inherit !important;
+    }
+}
+ .lm_tab {
+    [dir="rtl"] & {
+      padding: 0px 17px 0 17px !important;
+    }
 }
