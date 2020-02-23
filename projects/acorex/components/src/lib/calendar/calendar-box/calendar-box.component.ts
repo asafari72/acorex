@@ -55,7 +55,7 @@ export class AXCalendarBoxComponent implements AXBaseSizableComponent {
   viewRange: AXDateTimeRange;
 
   @Output()
-  change: EventEmitter<AXDateTime> = new EventEmitter<AXDateTime>();
+  valueChange: EventEmitter<AXDateTime> = new EventEmitter<AXDateTime>();
 
   private _value: AXDateTime;
   @Input()
@@ -67,7 +67,7 @@ export class AXCalendarBoxComponent implements AXBaseSizableComponent {
       this._value = v;
       this._value.type = this.type;
       this.setFocus(this._value.clone());
-      this.change.emit(this._value);
+      this.valueChange.emit(this._value);
     }
   }
 

@@ -1,7 +1,13 @@
-<!-- TO DO label="{{ label }}" [text]="_text" -->
-<ax-drop-down   icon="fas fa-calendar-alt" #dropdown fitParent="false" maxHeight="unset">
-  <ax-calendar-box (valueChange)="onDateChange($event)" [(value)]="value"></ax-calendar-box>
+<ax-drop-down size="{{size}}" [showDropDownButton]="false" icon="fas fa-calendar-alt" #dropdown fitParent="false" maxHeight="unset">
+  <ng-container header>
+    <ax-text-box [value]="value" [readonly]="true"></ax-text-box>
+  </ng-container>
+  <ng-container panel>
+    <ax-calendar-box size="{{size}}" (valueChange)="onDateChange($event)" [(value)]="value"></ax-calendar-box>
+  </ng-container>
+  <ax-button icon="fas fa-calendar-alt icon" type="light" (click)="handleButtonClick()"></ax-button>
 </ax-drop-down>
 <!-- <div class="validation-text" *ngIf="errorText">
   {{ errorText }}
 </div> -->
+

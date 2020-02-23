@@ -1,3 +1,9 @@
+.jalali {
+  .view {
+    direction: rtl !important;
+  }
+}
+
 .calendar-body {
   padding: 0.2em;
   width: 25em;
@@ -39,6 +45,7 @@
       flex: 1;
       width: 100%;
       border-collapse: unset;
+      margin: 0.3em 0 0 0;
 
       .calendar-item {
         font-family: inherit;

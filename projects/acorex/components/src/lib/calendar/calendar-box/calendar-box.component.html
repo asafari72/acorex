@@ -1,4 +1,4 @@
-<div class="calendar-body ax {{size}}">
+<div class="calendar-body ax {{size}}" [ngClass]="{'jalali': type === 'jalali'}">
   <div class="calendar-selector">
     <div class="arrows left-arrow" (click)="prev()">
       <i class="fas fa-chevron-left"></i>
@@ -79,7 +79,9 @@
     </ng-container>
   </div>
   <div class="footer">
-    <ax-button text="Today" (onClick)="setToday()" *ngIf="showTodayButton" size="sm" type="primary-light">
+    <!-- TODO: Add buttons -->
+    <ax-button (onClick)="setToday()" *ngIf="showTodayButton" size="sm" type="primary-light">
+      Today
     </ax-button>
   </div>
 </div>

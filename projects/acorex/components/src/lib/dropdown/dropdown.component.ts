@@ -3,38 +3,35 @@ import { AXElementSize, AXBaseDropdownComponent } from '@acorex/core';
 import { AXPopoverComponent } from '../popover';
 
 @Component({
-    selector: 'ax-drop-down',
-    templateUrl: './dropdown.component.html',
-    encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    host: { style: 'display:flex;align-items:center;flex:1' }
+  selector: 'ax-drop-down',
+  templateUrl: './dropdown.component.html',
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { style: 'display:flex;align-items:center;flex:1' }
 })
 export class AXDropdownComponent extends AXBaseDropdownComponent {
+  @ViewChild(AXPopoverComponent)
+  popSelectBox: AXPopoverComponent;
 
-    @ViewChild(AXPopoverComponent)
-    popSelectBox: AXPopoverComponent;
+  constructor() {
+    super();
+  }
 
-    constructor() {
-        super();
+  ngOnInit(): void {}
+
+  handleArrowClick(e: MouseEvent) {
+    if (this.disabled !== true) {
+      this.popSelectBox.toggle();
     }
+  }
 
-    ngOnInit(): void { }
+  close() {
+    this.popSelectBox.close();
+  }
 
-    handleArrowClick(e: MouseEvent) {
-        if (this.disabled !== true) {
-            this.popSelectBox.toggle();
-        }
-    }
+  open() {
+    this.popSelectBox.open();
+  }
 
-    close() {
-        this.popSelectBox.close();
-    }
-
-    open() {
-        this.popSelectBox.open();
-    }
-
-    focus() {
-
-    }
+  focus() {}
 }

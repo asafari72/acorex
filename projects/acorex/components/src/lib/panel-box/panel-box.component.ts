@@ -1,11 +1,6 @@
 import { Component, Input, Output, EventEmitter, ContentChild, TemplateRef } from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition
-} from '@angular/animations';
+import { trigger, state, style, animate, transition } from '@angular/animations';
+import { AXBaseSizableComponent, AXElementSize } from '@acorex/core';
 
 @Component({
   selector: 'ax-panel-box',
@@ -30,12 +25,18 @@ import {
       ),
       transition('Void => *', animate('0ms')),
       transition('shown => hidden', animate('200ms')),
-      transition('hidden => shown', animate('200ms')),
+      transition('hidden => shown', animate('200ms'))
     ])
   ]
 })
-export class AXPanelBoxComponent {
+export class AXPanelBoxComponent implements AXBaseSizableComponent {
   @ContentChild('header', { static: true }) headerTemplate: TemplateRef<any>;
+
+  @Input()
+  size: AXElementSize;
+
+  @Input()
+  type: string = '';
 
   @Input()
   caption: string = 'Caption';
@@ -62,5 +63,4 @@ export class AXPanelBoxComponent {
       this.collapsed = !this.collapsed;
     }
   }
-
 }

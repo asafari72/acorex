@@ -18,6 +18,9 @@ export class AXDialogComponent extends AXBaseComponent {
     super();
   }
 
+
+  // TODO : Click not working
+
   onClick: Function;
 
   onInnerClick(item: AXButtonItem) {
