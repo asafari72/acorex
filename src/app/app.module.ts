@@ -16,6 +16,7 @@ import { DataGridPageModule } from './demo/dataGrid/dataGrid.page.module';
 import { CalendarPageModule } from './demo/calendar/calendar.module';
 import { DatePickerPageModule } from './demo/datepicker/datepicker.module';
 import { PanelBoxPageModule } from './demo/panelbox/panelbox.module';
+import { ToastPageModule } from './demo/toast/toast.module';
 
 const DEMO = [
   HomePageModule,
@@ -27,7 +28,8 @@ const DEMO = [
   DataGridPageModule,
   CalendarPageModule,
   DatePickerPageModule,
-  PanelBoxPageModule
+  PanelBoxPageModule,
+  ToastPageModule
 ];
 @NgModule({
   declarations: [AppComponent],

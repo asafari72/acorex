@@ -1,5 +1,5 @@
 <div class="toast-container">
-  <header *ngIf="title" class="bk-{{ _style }}">
+  <header *ngIf="title" class="ax toast {{ _style }}">
     <div>
       <i class="{{_icon}}"></i>&nbsp;
       {{ title }}
@@ -8,11 +8,11 @@
       <i class="far fa-times-circle"></i>
     </div>
   </header>
-  <article class="bk-{{ _style }}-light">
+  <div class="content ax toast {{ _style }}">
     {{ message }}
     <div *ngIf="!title && closeable" (click)="close()" class="toast-close">
       <i class="far fa-times-circle"></i>
     </div>
     <div class="toast-progress" [style.width.%]='_toastWidth'></div>
-  </article>
+  </div>
 </div>
