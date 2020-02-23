@@ -1,4 +1,17 @@
-<h1>Calendar</h1>
 
+<h1>Jalali Calendar</h1>
+<ax-calendar-box size="md" (change)="handleValueChange($event)" type="jalali"></ax-calendar-box>
 
-<ax-calendar-box (change)="handleValueChange($event)" type="jalali"></ax-calendar-box>
+<h1>Gregorian Calendar</h1>
+<ax-calendar-box size="md" (change)="handleValueChange($event)"></ax-calendar-box>
+
+<h1>Calendar Sizes</h1>
+<ax-calendar-box size="xxs" (change)="handleValueChange($event)" type="jalali"></ax-calendar-box>
+<ax-calendar-box size="xs" (change)="handleValueChange($event)" type="jalali"></ax-calendar-box>
+<ax-calendar-box size="sm" (change)="handleValueChange($event)" type="jalali"></ax-calendar-box>
+<ax-calendar-box size="md" (change)="handleValueChange($event)" type="jalali"></ax-calendar-box>
+<ax-calendar-box size="lg" (change)="handleValueChange($event)" type="jalali"></ax-calendar-box>
+<ax-calendar-box size="xl" (change)="handleValueChange($event)" type="jalali"></ax-calendar-box>
+<ax-calendar-box size="xxl" (change)="handleValueChange($event)" type="jalali"></ax-calendar-box>
+
+<p>Selected Data: {{date}}</p>

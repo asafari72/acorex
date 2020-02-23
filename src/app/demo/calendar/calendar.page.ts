@@ -8,7 +8,7 @@ import { AXSelectionList, AXDateTime } from '@acorex/core';
 export class CalendarPage {
   constructor() {}
   title = 'acorex-framework';
-
+  date: string = '';
   selectedValues: any[] = ['2', '4'];
 
   handleSelectChange(e) {
@@ -34,5 +34,6 @@ export class CalendarPage {
   }
   handleValueChange(e: AXDateTime) {
     console.log(e.date);
+    this.date = e.date.toString();
   }
 }
