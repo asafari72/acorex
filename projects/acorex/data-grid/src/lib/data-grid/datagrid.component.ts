@@ -50,13 +50,17 @@ export class AXDataGridComponent {
   isFullWidthCell: Function;
   internalHeight: string = '100%';
 
-  autoGroupColumnDef = {
+  @Input()
+  autoGroupColumnDef: any = {
     headerName: 'Group by',
     field: 'group by',
     width: 200,
     cellRenderer: 'agGroupCellRenderer',
-    cellRendererParams: { checkbox: true }
+    cellRendererParams: { suppressCount: true, checkbox: true }
   };
+
+  @Input()
+  treeData: boolean = false;
 
   @Input()
   selectionMode: 'single' | 'multiple' = 'single';
@@ -66,6 +70,12 @@ export class AXDataGridComponent {
 
   @Input()
   loadOnInit: boolean = true;
+
+  @Input()
+  getDataPath: (item: any) => void;
+
+  @Input()
+  groupDefaultExpanded: number = 0;
 
   private _searchText: string;
   @Input()
@@ -181,7 +191,6 @@ export class AXDataGridComponent {
       this.internalHeight = '100%';
     }
   }
-
 
   private get intenalGridDataSource() {
 

@@ -1,15 +1,43 @@
+<!-- <ax-page>
+    <ax-toolbar>
+        <div></div>
+        <ax-toolbar-menu [items]="toolbarItemsEnd" (itemClick)="handleMenuItemClick($event)">
+        </ax-toolbar-menu>
+    </ax-toolbar>
+    <ax-page-content>
+        <ax-dock-layout>
+            <ax-dock-panel type="row">
+                <ax-dock-panel type="stack" [size]="20">
+                    <ax-dock-content caption="Filters">
+                        <ng-template>
+                            <ax-filter-panel [groups]="filterGroups" #filterPanel
+                                (filterChange)="onFilterChange($event)">
+                            </ax-filter-panel>
+                        </ng-template>
+                    </ax-dock-content>
+                </ax-dock-panel>
+                <ax-dock-panel type="stack" [size]="60">
+                    <ax-dock-content caption="Subcontractors">
+                        <ng-template>
+
+                            
+                        </ng-template>
+                    </ax-dock-content>
+                </ax-dock-panel>
+
+            </ax-dock-panel>
+        </ax-dock-layout>
+    </ax-page-content>
+</ax-page> -->
 <div style="height: 500px;">
-    <ax-data-grid #grid>
+    <ax-data-grid #grid [keyField]="id" [getDataPath]="getDataPath" [autoGroupColumnDef]="autoGroupColumnDef">
         <ax-data-source [provideData]="provideData">
         </ax-data-source>
         <ax-selection-column></ax-selection-column>
-        <ax-text-column field="name" caption="Name" [width]="95"></ax-text-column>
-        <ax-text-column field="lastname" caption="Lastname" [width]="60"></ax-text-column>
-        <ax-text-column field="age" caption="Age" [width]="85"></ax-text-column>
-        <ax-text-column field="phone" caption="Phone Numbaer" [width]="85"></ax-text-column>
-        <ax-command-column [items]="commandItems" (itemClick)="onCommandItemClick($event)"></ax-command-column>
+        <ax-text-column field="jobTitle" caption="jobTitle" [width]="120"></ax-text-column>
+        <ax-text-column field="employmentType" caption="employmentType" [width]="90">
+        </ax-text-column>
+        <ax-command-column [items]="commandItems" (itemClick)="onCommandItemClick($event)">
+        </ax-command-column>
     </ax-data-grid>
 </div>
-
-
-

@@ -45,6 +45,7 @@ export abstract class AXGridDataColumn {
     @Input()
     caption: string = '';
 
+
     constructor() { }
 
     render(): any {
@@ -80,7 +81,6 @@ export abstract class AXGridDataColumn {
             col.rowGroupIndex = this.rowGroupIndex;
             col.rowGroup = true;
         }
-
         if (this.cellClass) {
             const THAT = this;
             if (this.cellClass instanceof Function) {
