@@ -140,7 +140,6 @@ export class AXSelectBoxComponent extends AXDataListComponent implements AXBaseS
     }
 
     handleKeyEvent(e: KeyboardEvent) {
-        debugger;
         if (this.disabled || this.readonly) {
             return false;
         }

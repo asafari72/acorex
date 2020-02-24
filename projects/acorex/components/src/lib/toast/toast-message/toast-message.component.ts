@@ -22,10 +22,10 @@ export class AXToastMessageComponent implements OnInit {
   ngOnInit(): void {
     if (this.timeOut) {
       const interval = setInterval(() => {
-        // --this._toastWidth;
+        --this.toastWidth;
         if (this.toastWidth === 0) {
           clearInterval(interval);
-          // this.close();
+          this.close();
         }
       }, this.timeOut / 100);
     }
@@ -43,7 +43,6 @@ export class AXToastMessageComponent implements OnInit {
         this.style = 'info';
         break;
     }
-    debugger;
     switch (this.type) {
       case 'success':
         this.icon = 'fas fa-check-circle';
