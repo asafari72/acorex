@@ -7,6 +7,7 @@ import { Component, OnInit, Input, ElementRef, ViewEncapsulation } from '@angula
 })
 export class AXToastMessageComponent implements OnInit {
   constructor(private elRef: ElementRef) {}
+
   @Input() title: string = '';
   @Input() message: string;
   @Input() timeOut: number = 2000;
@@ -14,46 +15,47 @@ export class AXToastMessageComponent implements OnInit {
 
   @Input() type: 'info' | 'success' | 'warning' | 'error' = 'info';
 
-  _style: string = 'info';
-  _icon: string = '';
-  _toastWidth: number = 100;
+  style: string = 'info';
+  icon: string = '';
+  toastWidth: number = 100;
 
   ngOnInit(): void {
     if (this.timeOut) {
       const interval = setInterval(() => {
-        --this._toastWidth;
-        if (this._toastWidth === 0) {
+        // --this._toastWidth;
+        if (this.toastWidth === 0) {
           clearInterval(interval);
-          this.close();
+          // this.close();
         }
       }, this.timeOut / 100);
     }
     switch (this.type) {
       case 'success':
-        this._style = 'success';
+        this.style = 'success';
         break;
       case 'warning':
-        this._style = 'warning';
+        this.style = 'warning';
         break;
       case 'error':
-        this._style = 'error';
+        this.style = 'error';
         break;
       default:
-        this._style = 'info';
+        this.style = 'info';
         break;
     }
+    debugger;
     switch (this.type) {
       case 'success':
-        this._icon = 'fas fa-check-circle';
+        this.icon = 'fas fa-check-circle';
         break;
       case 'warning':
-        this._icon = 'fas fa-exclamation-triangle';
+        this.icon = 'fas fa-exclamation-triangle';
         break;
       case 'error':
-        this._icon = 'fas fa-exclamation-circle';
+        this.icon = 'fas fa-exclamation-circle';
         break;
       default:
-        this._icon = 'fas fa-info-circle';
+        this.icon = 'fas fa-info-circle';
         break;
     }
   }

@@ -10,18 +10,32 @@ export class ToastPage {
 
   openInfoToast() {
     this.toast.info('This is sample toast message');
+    this.toast.info('This is sample toast message', { closeable: true, timeOut: 5000, title: 'Example Title' });
   }
 
   openSuccessToast() {
     this.toast.success('This is sample toast message');
+    this.toast.success('This is sample toast message', { closeable: true, title: 'Error Message' });
   }
 
   openWarningToast() {
     this.toast.warning('This is sample toast message');
+    this.toast.warning('This is sample toast message', { closeable: true, title: 'Error Message' });
   }
 
   openDangerToast() {
-    this.toast.error('This is sample toast message');
+    this.toast.error(`
+    Lorem ipsum, or lipsum as it is sometimes known, is dummy
+     text used in laying out print, graphic or web designs.
+      The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero'
+      s De Finibus Bonorum et Malorum for use in a type specimen book.`);
+    this.toast.error(
+      `
+    Lorem ipsum, or lipsum as it is sometimes known,
+     is dummy text used in laying out print, graphic or web designs. The passage is attributed to
+      an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's
+       De Finibus Bonorum et Malorum for use in a type specimen book.`,
+      { closeable: true, title: 'Error Message' }
+    );
   }
-
 }

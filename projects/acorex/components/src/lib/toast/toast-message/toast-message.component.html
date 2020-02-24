@@ -1,18 +1,19 @@
 <div class="toast-container">
-  <header *ngIf="title" class="ax toast {{ _style }}">
+  
+  <header *ngIf="title" class="ax toast {{ style }}">
     <div>
-      <i class="{{_icon}}"></i>&nbsp;
+      <i class="{{icon}}"></i>&nbsp;
       {{ title }}
     </div>
     <div *ngIf="closeable" (click)="close()" class="toast-close">
       <i class="far fa-times-circle"></i>
     </div>
   </header>
-  <div class="content ax toast {{ _style }}">
+  <div class="content ax toast {{ style }}">
     {{ message }}
     <div *ngIf="!title && closeable" (click)="close()" class="toast-close">
       <i class="far fa-times-circle"></i>
     </div>
-    <div class="toast-progress" [style.width.%]='_toastWidth'></div>
+    <div class="toast-progress" [style.width.%]='toastWidth'></div>
   </div>
 </div>

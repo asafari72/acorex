@@ -29,8 +29,9 @@
         </ax-dock-layout>
     </ax-page-content>
 </ax-page> -->
+<!-- [keyField]="id -->
 <div style="height: 500px;">
-    <ax-data-grid #grid [keyField]="id" [getDataPath]="getDataPath" [autoGroupColumnDef]="autoGroupColumnDef">
+    <ax-data-grid #grid [treeData]="true" [getDataPath]="getDataPath" [autoGroupColumnDef]="autoGroupColumnDef">
         <ax-data-source [provideData]="provideData">
         </ax-data-source>
         <ax-selection-column></ax-selection-column>

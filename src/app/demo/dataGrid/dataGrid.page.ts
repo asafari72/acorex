@@ -123,7 +123,6 @@ export class DataGridPage implements OnInit {
     }
 
     getDataPath = (item: any) => {
-        debugger;
         return item.orgHierarchy;
     }
 

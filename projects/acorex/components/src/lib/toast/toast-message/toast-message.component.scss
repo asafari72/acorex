@@ -17,7 +17,7 @@
     padding: 0.8em;
   }
   .content {
-    padding: 1.2em;
+    padding: 0.8em;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,6 +31,7 @@
     width: 100%;
     bottom: 0;
     left: 0;
+    padding: 0.15em 0;
     -webkit-transition: linear width; /* Safari */
     transition: linear width;
   }

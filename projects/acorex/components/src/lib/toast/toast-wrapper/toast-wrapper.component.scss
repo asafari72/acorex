@@ -1,5 +1,6 @@
 ax-toast-wrapper {
-  width: fit-content;
+  min-width: 300px;
+  max-width: 360px;
   height: auto;
   position: fixed;
   bottom: 0;
