@@ -28,7 +28,7 @@ export class AXDatePickerComponent extends AXValidatableComponent implements AXB
     super();
   }
   @Input()
-  size: AXElementSize;
+  size: AXElementSize = 'md';
 
   selectToday() {}
 

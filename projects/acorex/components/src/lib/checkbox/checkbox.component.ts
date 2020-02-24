@@ -25,7 +25,7 @@ export class AXCheckBoxComponent extends AXBaseComponent implements AXBaseSizabl
   disabled: boolean;
 
   @Input()
-  size: AXElementSize;
+  size: AXElementSize = 'md';
 
   @Input()
 

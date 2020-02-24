@@ -3,44 +3,39 @@ import { AXBaseSizableComponent, AXBaseInputComponent, AXElementSize } from '@ac
 import { AXPopupService } from '@acorex/components';
 import { AXDataSourceReadParams } from '@acorex/components';
 @Component({
-    selector: 'ax-lov',
-    templateUrl: './data-lov.component.html',
-    styleUrls: ['./data-lov.component.scss']
+  selector: 'ax-lov',
+  templateUrl: './data-lov.component.html',
+  styleUrls: ['./data-lov.component.scss']
 })
 export class AXLOVComponent implements AXBaseSizableComponent, AXBaseInputComponent {
-    constructor(private popup: AXPopupService) {
+  constructor(private popup: AXPopupService) {}
+  selectedValues: any[] = ['2', '4'];
 
-    }
-    selectedValues: any[] = ['2', '4'];
+  private dataSource: any[] = [
+    { id: '1', title: 'Same Title 1', number: 1000 },
+    { id: '2', title: 'Same Title 2', number: 2000 },
+    { id: '3', title: 'Same Title 3', number: 3000 },
+    { id: '4', title: 'Same Title 4', number: 4000 }
+  ];
 
-    private dataSource: any[] = [
-        { id: '1', title: 'Same Title 1', number: 1000 },
-        { id: '2', title: 'Same Title 2', number: 2000 },
-        { id: '3', title: 'Same Title 3', number: 3000 },
-        { id: '4', title: 'Same Title 4', number: 4000 }
-    ];
+  @Input()
+  readonly: boolean;
 
-    @Input()
-    readonly: boolean;
+  @Input()
+  disabled: boolean;
 
-    @Input()
-    disabled: boolean;
+  @Input()
+  size: AXElementSize = 'md';
 
-    @Input()
-    size: AXElementSize;
+  focus(): void {}
 
-    focus(): void {
-    }
+  handleDataReceived = (e: AXDataSourceReadParams) => {
+    return Promise.resolve(this.dataSource);
+  };
 
-    handleDataReceived = (e: AXDataSourceReadParams) => {
-        return Promise.resolve(this.dataSource);
-    }
+  handleButtonClick() {}
 
-    handleButtonClick() {
-
-    }
-
-    handleSelectChange(e) {
-        console.log(e);
-    }
+  handleSelectChange(e) {
+    console.log(e);
+  }
 }

@@ -36,7 +36,7 @@ export class AXSelectBoxComponent extends AXDataListComponent implements AXBaseS
     disabled: boolean;
 
     @Input()
-    size: AXElementSize;
+    size: AXElementSize = 'md';
 
     text: string = '';
 

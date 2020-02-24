@@ -36,7 +36,7 @@ implements AXBaseSizableComponent, AXBaseValueComponent<boolean> {
   disabled: boolean;
 
   @Input()
-  size: AXElementSize;
+  size: AXElementSize = 'md';
 
   @Input()
   direction: string = 'horizontal';

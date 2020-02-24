@@ -33,7 +33,7 @@ export class AXPanelBoxComponent implements AXBaseSizableComponent {
   @ContentChild('header', { static: true }) headerTemplate: TemplateRef<any>;
 
   @Input()
-  size: AXElementSize;
+  size: AXElementSize = 'md';
 
   @Input()
   type: string = '';

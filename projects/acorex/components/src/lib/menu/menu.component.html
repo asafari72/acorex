@@ -1,8 +1,8 @@
-<div class="ax-menu-container" #container>
-  <ul class="root" [class.hor]="direction=='horizontal'" [class.ver]="direction=='vertical'" #root>
+<div class="ax menu-container {{size}}" #container>
+  <ul class="root" [class.horizontal]="direction=='horizontal'" [class.vertical]="direction=='vertical'" #root>
     <ng-template #recursiveList let-list>
       <ng-container *ngFor="let item of list;trackBy:trackByItem">
-        <li class="ax-toolbar-menu-item" *ngIf="item.visible!=false" (click)="onItemClick($event, item)"
+        <li class="ax-toolbar-menu-item"  [class.subIcon]='item.items' [class.startIcon]='item.startIcon' [class.endIcon]='item.endIcon' *ngIf="item.visible!=false" (click)="onItemClick($event, item)"
           [ngClass]="item.style" [class.selected]="item.selected" [attr.title]="item.tooltip ? item.tooltip : null"
           [attr.data-uid]="item.uid"
           [class.split]="item.split">
@@ -12,21 +12,15 @@
               </ng-container>
             </ng-container>
             <ng-template #menuBody>
-              <span class="ax-toolbar-menu-item-text" >
-                <i class="{{ item.icon }} ax-menu-item-icon" *ngIf="item.icon"></i>
-                <i class="{{ item.startIcon }} ax-menu-item-icon" *ngIf="item.startIcon"></i>
+              <span class="ax-toolbar-menu-item-text">
+                <i class="{{ item.startIcon }} start-icon ax-menu-item-icon" *ngIf="item.startIcon"></i>
                 <span *ngIf="item.text">{{ item.text }}</span>
-                <i class="{{ item.endIcon }} ax-menu-item-icon" *ngIf="item.endIcon"></i>
+                <i class="{{ item.endIcon }} end-icon ax-menu-item-icon" *ngIf="item.endIcon"></i>
               </span>
             </ng-template>
           </div>
-          <div class="sub-icon-side">
-            <ng-container *ngIf="item.hasChildren; else emptySub">
-              <i class="fas fa-angle-down ax-menu-item-drop-icon"></i>
-            </ng-container>
-            <ng-template #emptySub>
-              <i class="fas"></i>
-            </ng-template>
+          <div class="sub-icon-side" *ngIf="item.hasChildren">
+            <i class="fas fa-angle-down ax-menu-item-drop-icon"></i>
           </div>
           <ul *ngIf="item.hasChildren" class="collapsed sub-menu">
             <ng-container *ngTemplateOutlet="

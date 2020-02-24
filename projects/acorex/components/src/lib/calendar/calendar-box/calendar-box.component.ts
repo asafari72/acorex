@@ -21,7 +21,7 @@ export class AXCalendarBoxComponent implements AXBaseSizableComponent {
   }
 
   @Input()
-  size: AXElementSize;
+  size: AXElementSize = 'md';
 
   @Input()
   type: CalendarType = 'gregorian';

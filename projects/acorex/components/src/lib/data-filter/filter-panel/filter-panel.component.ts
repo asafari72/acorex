@@ -39,7 +39,7 @@ export class AXFilterPanelComponent {
         {
             name: 'saveAs',
             text: 'Save',
-            icon: 'fas fa-save',
+            startIcon: 'fas fa-save',
             items: [
                 {
                     name: 'save',

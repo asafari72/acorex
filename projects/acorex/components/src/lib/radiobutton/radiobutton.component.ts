@@ -25,7 +25,7 @@ export class AXRadioButtonComponent extends AXBaseComponent implements AXBaseSiz
   disabled: boolean;
 
   @Input()
-  size: AXElementSize;
+  size: AXElementSize = 'md';
 
 
 

@@ -12,6 +12,7 @@ import { CalendarPage } from './demo/calendar/calendar.page';
 import { DatePickerPage } from './demo/datepicker/datepicker.page';
 import { PanelBoxPage } from './demo/panelbox/panelbox.page';
 import { ToastPage } from './demo/toast/toast.page';
+import { MenuPage } from './demo/menu/menu.page';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -19,6 +20,7 @@ export const routes: Routes = [
   { path: 'button', pathMatch: 'full', component: ButtonPage },
   { path: 'calendar', pathMatch: 'full', component: CalendarPage },
   { path: 'input', pathMatch: 'full', component: InputPage },
+  { path: 'menu', pathMatch: 'full', component: MenuPage },
   { path: 'panelbox', pathMatch: 'full', component: PanelBoxPage },
   { path: 'popup', pathMatch: 'full', component: PopupPage },
   { path: 'select', pathMatch: 'full', component: SelectPage },
@@ -26,10 +28,11 @@ export const routes: Routes = [
   { path: 'datagrid', pathMatch: 'full', component: DataGridPage },
   { path: 'datepicker', pathMatch: 'full', component: DatePickerPage },
   { path: 'toast', pathMatch: 'full', component: ToastPage }
-
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule {}

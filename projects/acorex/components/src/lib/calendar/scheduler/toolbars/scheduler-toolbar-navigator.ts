@@ -41,7 +41,7 @@ export class AXToolbarSchedulerNavigatorComponent {
         this.items = [
             {
                 name: 'prev',
-                icon: 'fas fa-angle-left',
+                startIcon: 'fas fa-angle-left',
                 tooltip: 'Prev'
             },
             {
@@ -51,7 +51,7 @@ export class AXToolbarSchedulerNavigatorComponent {
             },
             {
                 name: 'next',
-                icon: 'fas fa-angle-right',
+                startIcon: 'fas fa-angle-right',
                 tooltip: 'Next'
             },
             {
