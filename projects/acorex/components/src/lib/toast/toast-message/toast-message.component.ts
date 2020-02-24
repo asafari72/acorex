@@ -1,9 +1,9 @@
-import { Component, OnInit, Input, ElementRef, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit, Input, ElementRef, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  templateUrl: "./toast-message.component.html",
-  styleUrls: ["./toast-message.component.scss"],
-  encapsulation:ViewEncapsulation.None
+  templateUrl: './toast-message.component.html',
+  styleUrls: ['./toast-message.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AXToastMessageComponent implements OnInit {
   constructor(private elRef: ElementRef) {}
@@ -12,55 +12,52 @@ export class AXToastMessageComponent implements OnInit {
   @Input() timeOut: number = 2000;
   @Input() closeable: boolean = false;
 
-  @Input() type: "info" | "success" | "warning" | "error" = "info";
+  @Input() type: 'info' | 'success' | 'warning' | 'error' = 'info';
 
-  _style: string = "primary";
-  _icon: string = "primary";
+  _style: string = 'info';
+  _icon: string = '';
   _toastWidth: number = 100;
 
   ngOnInit(): void {
     if (this.timeOut) {
-      let interval = setInterval(() => {
+      const interval = setInterval(() => {
         --this._toastWidth;
         if (this._toastWidth === 0) {
           clearInterval(interval);
           this.close();
         }
-      }, this.timeOut/100
-      );
+      }, this.timeOut / 100);
     }
     switch (this.type) {
-      case "success":
-        this._style = "success";
+      case 'success':
+        this._style = 'success';
         break;
-      case "warning":
-        this._style = "warning";
+      case 'warning':
+        this._style = 'warning';
         break;
-      case "error":
-        this._style = "danger";
+      case 'error':
+        this._style = 'error';
         break;
       default:
-        this._style = "primary";
+        this._style = 'info';
         break;
     }
     switch (this.type) {
-      case "success":
-        this._icon = "fas fa-check-circle";
+      case 'success':
+        this._icon = 'fas fa-check-circle';
         break;
-      case "warning":
-        this._icon = "fas fa-exclamation-triangle";
+      case 'warning':
+        this._icon = 'fas fa-exclamation-triangle';
         break;
-      case "error":
-        this._icon = "fas fa-exclamation-circle";
+      case 'error':
+        this._icon = 'fas fa-exclamation-circle';
         break;
       default:
-        this._icon = "fas fa-info-circle";
+        this._icon = 'fas fa-info-circle';
         break;
     }
   }
   close() {
-    this.elRef.nativeElement.parentElement.removeChild(
-      this.elRef.nativeElement
-    );
+    this.elRef.nativeElement.parentElement.removeChild(this.elRef.nativeElement);
   }
 }

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IValidationRuleResult } from './validation.classs';
+import { AXValidationRuleResult } from './validation.class';
 
 @Component({
   selector: 'ax-validation-rule',
@@ -13,8 +13,8 @@ export class AXValidationRule {
   @Input()
   value: any;
 
-  validate(value: any): Promise<IValidationRuleResult> {
-    return new Promise<IValidationRuleResult>(resolve => {
+  validate(value: any): Promise<AXValidationRuleResult> {
+    return new Promise<AXValidationRuleResult>(resolve => {
       switch (this.type) {
         case 'required':
           resolve({ message: this.message, result: value != null && value != '' });

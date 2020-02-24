@@ -1,20 +1,20 @@
 .ax-panel-box {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border-radius: var(--ax-size-border-radius);
+  overflow: hidden;
+  font-family: inherit;
+  font-size: inherit;
   header {
-    &.default {
       display: flex;
       flex: 1;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid var(--border-color);
-      padding: var(--sp-sm-size) var(--sp-md-size);
-      font-size: var(--font-md-size);
-      background-color: var(--primary-color);
-      color: var(--white-color);
-    }
+      border-bottom: 1px solid var(--ax-border-color);
+      padding: 0.8em;
   }
 
   .content {
-    padding: var(--sp-sm-size) var(--sp-md-size);;
+    padding: 0.8em;
     overflow: hidden;
   }
 

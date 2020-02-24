@@ -243,10 +243,47 @@
           }
         }
       }
+    },
+    "@acorex/layout": {
+      "projectType": "library",
+      "root": "projects/acorex/layout",
+      "sourceRoot": "projects/acorex/layout/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/acorex/layout/tsconfig.lib.json",
+            "project": "projects/acorex/layout/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/acorex/layout/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/acorex/layout/src/test.ts",
+            "tsConfig": "projects/acorex/layout/tsconfig.spec.json",
+            "karmaConfig": "projects/acorex/layout/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/acorex/layout/tsconfig.lib.json",
+              "projects/acorex/layout/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
-  "defaultProject": "acorex",
-  "cli": {
-    "analytics": "956456a5-08e8-41b1-8c11-eaab0e717bc6"
-  }
+  "defaultProject": "acorex"
 }

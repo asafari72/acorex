@@ -70,6 +70,10 @@
                 border-color: var(--ax-#{$name}-dark-#{$color-suffix});
               }
             }
+            &.panel{
+              color: var(--ax-#{$name}-fore-#{$color-suffix});
+              background-color: var(--ax-#{$name}-#{$color-suffix});
+            }
           }
         }
       }
