@@ -12,10 +12,10 @@ export class AXDockPanelComponent {
 
     }
 
-    private uid: string = "panel-" + Math.floor(Math.random() * 100000000);
+    private uid: string = 'panel-' + Math.floor(Math.random() * 100000000);
 
-    @Input("type") public type: "row" | "column" | "stack" = "column";
-    @Input("size") public size: number;
+    @Input('type') public type: 'row' | 'column' | 'stack' = 'column';
+    @Input('size') public size: number;
 
     @ContentChildren(AXDockPanelComponent)
     private panels: QueryList<AXDockPanelComponent>;
@@ -24,20 +24,21 @@ export class AXDockPanelComponent {
     private contents: QueryList<AXDockPanelContentComponent>;
 
     config(): any {
-        let conf: any = {}
+        const conf: any = {};
         conf.type = this.type;
         conf.uid = this.uid;
         conf.content = [];
-        if (this.type == "column" && this.size)
+        if (this.type === 'column' && this.size) {
             conf.height = this.size;
-        if ((this.type == "row" || this.type == "stack") && this.size)
+        }
+        if ((this.type === 'row' || this.type === 'stack') && this.size) {
             conf.width = this.size;
-
-        this.panels.filter(c => c.uid != this.uid).forEach(p => {
-            conf.content.push(p.config())
+        }
+        this.panels.filter(c => c.uid !== this.uid).forEach(p => {
+            conf.content.push(p.config());
         });
         this.contents.forEach(c => {
-            conf.content.push(c.config())
+            conf.content.push(c.config());
         });
         return conf;
     }
