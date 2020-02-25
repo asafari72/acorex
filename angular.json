@@ -285,5 +285,8 @@
       }
     }
   },
-  "defaultProject": "acorex"
+  "defaultProject": "acorex",
+  "cli": {
+    "analytics": "0fe693b0-357a-4295-824e-5ac572f5108f"
+  }
 }

@@ -21,7 +21,7 @@ import * as Jquery from 'jquery';
 export class AXDockPanelContentComponent {
   @ContentChild(TemplateRef, { static: true }) template: TemplateRef<any>;
 
-  constructor(public viewContainerRef: ViewContainerRef, private cdr: ChangeDetectorRef) {}
+  constructor(public viewContainerRef: ViewContainerRef, private cdr: ChangeDetectorRef) { }
 
   @Input()
   caption: string;
@@ -31,18 +31,18 @@ export class AXDockPanelContentComponent {
   uid: string = 'content-' + Math.floor(Math.random() * 100000000);
 
   config(): any {
-    let conf: any = {};
+    const conf: any = {};
     conf.type = 'component';
     conf.componentName = 'component';
     conf.content = [];
     conf.title = this.caption;
     conf.uid = this.uid;
-    let self = this;
+    const self = this;
     conf.componentState = {
       text: this.caption,
       render: (el: any) => {
         if (self.template) {
-          let view = self.viewContainerRef.createEmbeddedView(self.template);
+          const view = self.viewContainerRef.createEmbeddedView(self.template);
           view.rootNodes.forEach((element) => {
             el.append(element);
           });
