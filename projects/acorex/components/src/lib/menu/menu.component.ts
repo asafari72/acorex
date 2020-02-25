@@ -115,6 +115,7 @@ export class AXMenuComponent implements AXBaseSizableComponent {
     this.zone.runOutsideAngular(() => {
       const li = (e.target as HTMLElement).closest('li');
       const ul = li.querySelector('ul');
+
       this.closeOnOut(li);
       if (ul) {
         let r: boolean = false;
@@ -276,6 +277,17 @@ export class AXMenuComponent implements AXBaseSizableComponent {
     if (this.target && this.mode === 'visible') {
       this.mode = 'context';
     }
+    this.container.nativeElement.childNodes.forEach((c: HTMLElement) => {
+      if (c.className === 'root vertical') {
+        const li = c.querySelectorAll('li');
+        li.forEach((l) => {
+          console.log(l);
+          l.classList.add('startIcon');
+          l.classList.add('endIcon');
+          l.style.justifyContent = 'space-between';
+        });
+      }
+    });
   }
 
   ngAfterViewInit(): void {
