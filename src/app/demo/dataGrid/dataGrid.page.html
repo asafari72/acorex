@@ -7,7 +7,7 @@
     <ax-page-content>
         <ax-dock-layout>
             <ax-dock-panel type="row">
-                <ax-dock-panel type="stack" [size]="20">
+                <!-- <ax-dock-panel type="stack" [size]="20">
                     <ax-dock-content caption="Filters">
                         <ng-template>
                             <ax-filter-panel [groups]="filterGroups" #filterPanel
@@ -15,28 +15,24 @@
                             </ax-filter-panel>
                         </ng-template>
                     </ax-dock-content>
-                </ax-dock-panel>
+                </ax-dock-panel> -->
                 <ax-dock-panel type="stack" [size]="60">
                     <ax-dock-content caption="Subcontractors">
                         <ng-template>
-                            <div style="height: 500px;">
-                                <ax-data-grid #grid [treeData]="true" [getDataPath]="getDataPath"
-                                    [autoGroupColumnDef]="autoGroupColumnDef">
-                                    <ax-data-source [provideData]="provideData">
-                                    </ax-data-source>
-                                    <ax-selection-column></ax-selection-column>
-                                    <ax-text-column field="jobTitle" caption="jobTitle" [width]="120"></ax-text-column>
-                                    <ax-text-column field="employmentType" caption="employmentType" [width]="90">
-                                    </ax-text-column>
-                                    <ax-command-column [items]="commandItems" (itemClick)="onCommandItemClick($event)">
-                                    </ax-command-column>
-                                </ax-data-grid>
-                            </div>
-
+                            <ax-data-grid #grid [treeData]="true" [getDataPath]="getDataPath"
+                                [autoGroupColumnDef]="autoGroupColumnDef">
+                                <ax-data-source [provideData]="provideData">
+                                </ax-data-source>
+                                <ax-selection-column></ax-selection-column>
+                                <ax-text-column field="jobTitle" caption="jobTitle" [width]="120"></ax-text-column>
+                                <ax-text-column field="employmentType" caption="employmentType" [width]="90">
+                                </ax-text-column>
+                                <ax-command-column [items]="commandItems" (itemClick)="onCommandItemClick($event)">
+                                </ax-command-column>
+                            </ax-data-grid>
                         </ng-template>
                     </ax-dock-content>
                 </ax-dock-panel>
-
             </ax-dock-panel>
         </ax-dock-layout>
     </ax-page-content>
