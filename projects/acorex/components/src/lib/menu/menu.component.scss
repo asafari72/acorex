@@ -153,10 +153,6 @@
                 position: relative;
                 cursor: pointer;
 
-                &:hover {
-                    background-color: var(--ax-primary-trans-light-color);
-                }
-
                 .sub-icon-side {
                     height: 100%;
                     display: flex;
@@ -213,10 +209,9 @@
             >li {
                 padding: 0.4em 0.8em;
                 display: flex;
-                background-color: var(--ax-gray-trans-dark-color);
                 position: relative;
                 align-items: center;
-
+                overflow: hidden;
             }
 
             &.horizontal {
@@ -225,6 +220,9 @@
 
                 >li {
                     margin-inline-end: 0.6em;
+                    -webkit-border-radius: var(--ax-size-border-radius);
+                    -moz-border-radius: var(--ax-size-border-radius);
+                    border-radius: var(--ax-size-border-radius);
                 }
             }
 
@@ -259,6 +257,7 @@
                     padding-top: 0.5em;
                     padding-bottom: 0.5em;
                     display: flex;
+
                     &.split {
                         border-top: 1px solid -var(--ax-border-color);
                     }
