@@ -8,10 +8,9 @@ export class AXBaseMenuItem {
   visible? = true;
   disable? = false;
   selected? = false;
-  type? = 'primary';
   groupName?: string;
   data?: any;
-  style?: string = 'ax light';
+  style?: string;
   orderIndex ? = 0;
   endIcon?: string;
   startIcon?: string;

@@ -8,6 +8,7 @@
     }
   },
   "whitelistedNonPeerDependencies": [
+    "jquery",
     "@types/jquery",
     "golden-layout"
   ]
