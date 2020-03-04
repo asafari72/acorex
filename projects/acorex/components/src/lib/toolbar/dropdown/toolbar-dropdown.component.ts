@@ -38,7 +38,7 @@ export class AXToolbarDropdownComponent extends AXBaseComponent {
         endIcon: 'fas fa-angle-down',
         disable: false,
         visible: true,
-        type: ''
+        style: ''
       }
     ];
   }

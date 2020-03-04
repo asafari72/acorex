@@ -45,7 +45,7 @@ export class AXToolbarFilterViewComponent {
             items: [
                 {
                     name: 'selectAll',
-                    type: 'f',
+                    style: 'f',
                     text: 'Select All',
                 },
                 // {
@@ -104,7 +104,7 @@ export class AXToolbarFilterViewComponent {
 
     itemClick(e: AXMenuItem) {
 
-        if (e.type === 'f') {
+        if (e.style === 'f') {
             if (e.name === 'selectAll') {
                 this.selectAll();
             }
@@ -158,7 +158,7 @@ export class AXToolbarFilterViewComponent {
 
     private setCurrent(e: AXMenuItem) {
         this.root.text = e.text;
-        this.root.items.filter(c => c.type === 'f').forEach(c => {
+        this.root.items.filter(c => c.style === 'f').forEach(c => {
             c.selected = false;
             c.startIcon = 'fas';
         });
