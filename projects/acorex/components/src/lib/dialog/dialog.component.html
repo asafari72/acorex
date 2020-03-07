@@ -5,7 +5,7 @@
     <div class="buttons">
         <ng-container *ngFor="let button of buttons">
             <ax-button [type]="button.type" [submitBehavior]="button.submitBehavior"
-                [cancelBehavior]="button.cancelBehavior" (onClick)="onInnerClick(button)">
+                [cancelBehavior]="button.cancelBehavior" (click)="onInnerClick(button)">
                 <i class="{{button.icon}}"></i>
                 {{button.text}}
             </ax-button>

@@ -1,4 +1,7 @@
-<ax-text-box [value]="value" (onkey)="onSearchChanged($event)" showClear="true" placeholder="Search ...">
-  <ax-button type="light" icon="fas fa-search">
-  </ax-button>
-</ax-text-box>
+
+<ax-form-group [size]="size">
+  <ax-text-box [value]="value" (onkey)="onSearchChanged($event)" showClear="true" placeholder="Search ...">
+    <ax-button type="light" icon="fas fa-search">
+    </ax-button>
+  </ax-text-box>
+</ax-form-group>

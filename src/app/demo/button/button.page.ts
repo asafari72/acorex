@@ -1,39 +1,35 @@
 import { Component } from '@angular/core';
-import {  AXSelectionList } from '@acorex/core';
+import { AXSelectionList } from '@acorex/core';
 
 @Component({
-    templateUrl: './button.page.html',
-    styleUrls: ['./button.page.scss']
+  templateUrl: './button.page.html',
+  styleUrls: ['./button.page.scss']
 })
 export class ButtonPage {
-    constructor() {
+  constructor() {}
+  title = 'acorex-framework';
+  items2: [1, 2, 3, 4, 5];
+  selectedValues: any[] = ['2', '4'];
 
+  handleSelectChange(e) {
+    console.log(e);
+  }
+  items: AXSelectionList[] = [
+    {
+      value: '1',
+      text: 'Items 1'
+    },
+    {
+      value: '2',
+      text: 'Items 2'
+    },
+    {
+      value: '3',
+      text: 'Items 3'
     }
-    title = 'acorex-framework';
+  ];
 
-    selectedValues: any[] = ['2', '4'];
-
-    handleSelectChange(e) {
-        console.log(e);
-    }
-    items: AXSelectionList[] = [
-        {
-            value: '1',
-            text: 'Items 1',
-        },
-        {
-            value: '2',
-            text: 'Items 2',
-        },
-        {
-            value: '3',
-            text: 'Items 3',
-        },
-    ];
-
-
-    handleSelectedValuesChange(e) {
-        console.log(e);
-
-    }
+  handleSelectedValuesChange(e) {
+    console.log(e);
+  }
 }

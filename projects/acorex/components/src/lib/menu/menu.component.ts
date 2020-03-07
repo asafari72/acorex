@@ -30,7 +30,9 @@ export class AXMenuComponent implements AXBaseSizableComponent {
       window.addEventListener('resize', this.onResize.bind(this));
     });
   }
-
+  ngAfterContentInit(): void {
+    console.log(document.querySelector('body').style.direction);
+  }
   @ViewChild('container', { static: true })
   private container: ElementRef<HTMLElement>;
   @ViewChild('root', { static: true })
@@ -53,6 +55,7 @@ export class AXMenuComponent implements AXBaseSizableComponent {
   }
 
   resizeChangeObserver: any;
+  rtl: boolean = false;
 
   @Output()
   itemClick: EventEmitter<AXMenuItem> = new EventEmitter<AXMenuItem>();

@@ -5,7 +5,8 @@ import { AXBaseSizableComponent, AXBaseComponent, AXElementSize } from '@acorex/
   selector: 'ax-form-group',
   templateUrl: './form-group.component.html',
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { style: 'flex:1' }
 })
 export class AXFormGroupComponent extends AXBaseComponent implements AXBaseSizableComponent {
   @Input()
