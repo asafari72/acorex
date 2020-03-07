@@ -77,6 +77,20 @@ export class AXDataGridComponent {
   @Input()
   groupDefaultExpanded: number = 0;
 
+
+  @Input()
+  keyField: string = 'ID';
+
+  @Input()
+  ParentField: string;
+
+  @Input()
+  childField: string;
+
+  @Input()
+  hasChildField: string;
+
+
   private _searchText: string;
   @Input()
   public get searchText(): string {
@@ -198,6 +212,7 @@ export class AXDataGridComponent {
     return {
       rowCount: null,
       getRows: (params) => {
+        debugger;
         that.dataSourceSuccessCallback = params.successCallback;
         const loadParams: AXDataSourceReadParams = {};
         loadParams.searchText = that.searchText;
@@ -218,6 +233,13 @@ export class AXDataGridComponent {
     };
   }
 
+  isServerSideGroup = (e) => {
+    return e[this.hasChildField];
+  }
+
+  getServerSideGroupKey = (e) => {
+    return e[this.keyField];
+  }
   internalGridReady(gridOptions: GridOptions) {
     this.gridApi = gridOptions.api;
     this.mapColumns();
@@ -241,6 +263,9 @@ export class AXDataGridComponent {
   }
 
   ngOnInit(): void {
+    if (this.treeData == true) {
+      this.rowGroupPanelShow = "none"
+    }
     if (this.remoteOperation) {
       this.rowModelType = 'serverSide';
     }

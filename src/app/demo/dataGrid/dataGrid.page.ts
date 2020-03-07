@@ -7,75 +7,92 @@ import { AXFilterColumnGroup } from 'projects/acorex/components/src/lib';
   styleUrls: ['./dataGrid.page.scss']
 })
 export class DataGridPage implements OnInit {
-  constructor() {}
+  constructor() { }
 
   groupDefaultExpanded = -1;
-
-  gridData: any = [
+  gridDataChild: any = [
     {
-      orgHierarchy: ['Erica Rogers'],
-      jobTitle: 'CEO',
-      employmentType: 'Permanent'
-    },
-    {
-      orgHierarchy: ['Erica Rogers', 'Malcolm Barrett'],
-      jobTitle: 'Exec. Vice President',
-      employmentType: 'Permanent'
-    },
-    {
-      orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Esther Baker'],
-      jobTitle: 'Director of Operations',
-      employmentType: 'Permanent'
-    },
-    {
-      orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Esther Baker', 'Brittany Hanson'],
-      jobTitle: 'Fleet Coordinator',
-      employmentType: 'Permanent'
-    },
-    {
-      orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Esther Baker', 'Brittany Hanson', 'Leah Flowers'],
-      jobTitle: 'Parts Technician',
-      employmentType: 'Contract'
-    },
-    {
-      orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Esther Baker', 'Brittany Hanson', 'Tammy Sutton'],
-      jobTitle: 'Service Technician',
-      employmentType: 'Contract'
-    },
-    {
-      orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Esther Baker', 'Derek Paul'],
-      jobTitle: 'Inventory Control',
-      employmentType: 'Permanent'
-    },
-    {
-      orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Francis Strickland'],
-      jobTitle: 'VP Sales',
-      employmentType: 'Permanent'
-    },
-    {
-      orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Francis Strickland', 'Morris Hanson'],
-      jobTitle: 'Sales Manager',
-      employmentType: 'Permanent'
-    },
-    {
-      orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Francis Strickland', 'Todd Tyler'],
+      // orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Francis Strickland', 'Todd Tyler'],
       jobTitle: 'Sales Executive',
-      employmentType: 'Contract'
+      employmentType: 'Contract',
+      hasChild: true
     },
     {
-      orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Francis Strickland', 'Bennie Wise'],
+      //  orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Francis Strickland', 'Bennie Wise'],
       jobTitle: 'Sales Executive',
-      employmentType: 'Contract'
+      employmentType: 'Contract',
+      hasChild: true
     },
     {
-      orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Francis Strickland', 'Joel Cooper'],
+      //   orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Francis Strickland', 'Joel Cooper'],
       jobTitle: 'Sales Executive',
-      employmentType: 'Permanent'
+      employmentType: 'Permanent',
+      hasChild: false
     }
+  ]
+
+
+
+  gridDataRoot: any = [
+    {
+      // orgHierarchy: ['Erica Rogers'],
+      jobTitle: 'CEO',
+      employmentType: 'Permanent',
+      hasChild: true
+    },
+    {
+      //orgHierarchy: ['Erica Rogers', 'Malcolm Barrett'],
+      jobTitle: 'Exec. Vice President',
+      employmentType: 'Permanent',
+      hasChild: true
+    },
+    {
+      // orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Esther Baker'],
+      jobTitle: 'Director of Operations',
+      employmentType: 'Permanent',
+      hasChild: true
+    },
+    {
+      // orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Esther Baker', 'Brittany Hanson'],
+      jobTitle: 'Fleet Coordinator',
+      employmentType: 'Permanent',
+      hasChild: true
+    },
+    {
+      //  orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Esther Baker', 'Brittany Hanson', 'Leah Flowers'],
+      jobTitle: 'Parts Technician',
+      employmentType: 'Contract',
+      hasChild: false
+    },
+    {
+      // orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Esther Baker', 'Brittany Hanson', 'Tammy Sutton'],
+      jobTitle: 'Service Technician',
+      employmentType: 'Contract',
+      hasChild: true
+    },
+    {
+      // orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Esther Baker', 'Derek Paul'],
+      jobTitle: 'Inventory Control',
+      employmentType: 'Permanent',
+      hasChild: false
+    },
+    {
+      //  orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Francis Strickland'],
+      jobTitle: 'VP Sales',
+      employmentType: 'Permanent',
+      hasChild: true
+    },
+    {
+      // orgHierarchy: ['Erica Rogers', 'Malcolm Barrett', 'Francis Strickland', 'Morris Hanson'],
+      jobTitle: 'Sales Manager',
+      employmentType: 'Permanent',
+      hasChild: true
+    },
+
   ];
 
-  handleMenuItemClick(e) {}
-  onFilterChange(e) {}
+  handleMenuItemClick(e) { }
+  onFilterChange(e) { }
   filterGroups: AXFilterColumnGroup[] = [
     {
       caption: 'Information',
@@ -101,27 +118,45 @@ export class DataGridPage implements OnInit {
   commandItems: AXMenuItem[] = [
     {
       name: 'delete',
-      type: 'danger',
+      style: 'ax danger',
       startIcon: 'fas fa-trash-alt text-danger',
       visible: true,
       disable: false
     }
   ];
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  provideData = () => {
-    return new Promise((resolve) => {
-      resolve(this.gridData);
-    });
+  provideData = (e) => {
+    debugger
+    if (e.groupKeys.length === 0) {
+      return new Promise((resolve) => {
+        resolve(this.gridDataRoot);
+      });
+    } else {
+      return new Promise((resolve) => {
+        resolve(this.gridDataChild);
+      });
+    }
+
+
+
   };
 
-  getDataPath = (item: any) => {
-    return item.orgHierarchy;
-  };
+  columnGroupOpened(e) {
+    debugger
+  }
 
+  // getDataPath = (item: any) => {
+  //   debugger
+  //   return item.orgHierarchy;
+  // };
+
+  getServerSideGroupKey(e) {
+    debugger
+  }
   autoGroupColumnDef: any = {
     headerName: 'Organisation Hierarchy',
     cellRendererParams: { suppressCount: true }
   };
-  onCommandItemClick(e) {}
+  onCommandItemClick(e) { }
 }
