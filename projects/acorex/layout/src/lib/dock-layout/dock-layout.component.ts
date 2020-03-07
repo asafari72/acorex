@@ -15,7 +15,6 @@ import { AXDockPanelComponent } from './dock-panel.component';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { NgZone } from '@angular/core';
-import * as Jquery from 'jquery';
 declare var $: any;
 
 export class AXDockLayoutState {

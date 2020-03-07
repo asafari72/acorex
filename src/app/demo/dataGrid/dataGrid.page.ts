@@ -92,7 +92,7 @@ export class DataGridPage implements OnInit {
   ];
 
   handleMenuItemClick(e) { }
-  onFilterChange(e) { }
+ 
   filterGroups: AXFilterColumnGroup[] = [
     {
       caption: 'Information',
@@ -106,6 +106,9 @@ export class DataGridPage implements OnInit {
     }
   ];
 
+  onFilterChange(e){
+
+      }
   toolbarItemsEnd: AXMenuItem[] = [
     {
       name: 'newCustomer',

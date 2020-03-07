@@ -19,6 +19,7 @@ import { PanelBoxPageModule } from './demo/panelbox/panelbox.module';
 import { ToastPageModule } from './demo/toast/toast.module';
 import { MenuPageModule } from './demo/menu/menu.module';
 
+
 const DEMO = [
   HomePageModule,
   ButtonsPageModule,
