@@ -1,10 +1,9 @@
 import { Component, Input, ContentChildren, QueryList, Output, EventEmitter, ContentChild } from '@angular/core';
 import { AXBaseSizableComponent, AXBaseInputComponent, AXElementSize } from '@acorex/core';
 import { AXPopupService } from '@acorex/components';
-import { AXDataSourceReadParams } from '@acorex/components';
+import { AXDataSourceReadParams, AXDataSourceComponent } from '@acorex/components';
 import { AXDataLovPopupComponent } from './data-lov-popup/data-lov-popup.component';
 import { AXGridDataColumn } from '../data-grid';
-import { AXDataSourceComponent } from 'projects/acorex/components/src/lib';
 
 
 @Component({

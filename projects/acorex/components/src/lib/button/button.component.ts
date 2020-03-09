@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation, ElementRef, ViewChild, HostListener } from '@angular/core';
+import { Component, Input, ViewEncapsulation, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { AXBaseButtonComponent } from '@acorex/core';
 @Component({
     selector: 'ax-button',
