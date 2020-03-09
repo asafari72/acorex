@@ -23,5 +23,6 @@ export * from './tab-page';
 export * from './textbox';
 export * from './toast';
 export * from './toolbar';
+export * from './tree-view';
 
 

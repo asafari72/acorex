@@ -25,11 +25,19 @@
     grid
 </label>
 <div style="height: 400px;">
-    <ax-data-grid #grid [treeData]="false" [selectionMode]="'multiple'" [remoteOperation]="true"
-        [autoGroupColumnDef]="autoGroupColumnDef" isServerSideGroup="true"
-        (getServerSideGroupKey)="getServerSideGroupKey($event)">
+    <ax-data-grid #grid [selectionMode]="'multiple'" [remoteOperation]="true" [autoGroupColumnDef]="autoGroupColumnDef"
+        isServerSideGroup="true" (getServerSideGroupKey)="getServerSideGroupKey($event)">
+
+        <ax-toolbar>
+            <ax-toolbar-menu [items]="toolbarItemsEnd">
+            </ax-toolbar-menu>
+            <div></div>
+            <ax-toolbar-search></ax-toolbar-search>
+        </ax-toolbar>
+
         <ax-data-source [provideData]="provideData">
         </ax-data-source>
+
         <ax-selection-column></ax-selection-column>
         <ax-text-column field="jobTitle" caption="jobTitle" [width]="120"></ax-text-column>
         <ax-text-column field="employmentType" caption="employmentType" [width]="90">
@@ -44,7 +52,7 @@
 </label>
 
 <div style="height: 400px;">
-    <ax-data-grid #grid [keyField]="'employmentType'" [hasChildField]="'hasChild'" [treeData]="true"
+    <ax-data-grid #grid [selectionMode]="'multiple'" [keyField]="'employmentType'" [hasChildField]="'hasChild'"
         [remoteOperation]="true" [autoGroupColumnDef]="autoGroupColumnDef" isServerSideGroup="true"
         (getServerSideGroupKey)="getServerSideGroupKey($event)">
         <ax-data-source [provideData]="provideData">
@@ -64,8 +72,8 @@
 </label>
 
 <div style="height: 400px;">
-    <ax-data-grid #grid [remoteOperation]="true" [autoGroupColumnDef]="autoGroupColumnDef" isServerSideGroup="true"
-        (getServerSideGroupKey)="getServerSideGroupKey($event)">
+    <ax-data-grid #grid [selectionMode]="'multiple'" [remoteOperation]="true" [autoGroupColumnDef]="autoGroupColumnDef"
+        isServerSideGroup="true" (getServerSideGroupKey)="getServerSideGroupKey($event)">
         <ax-data-source [provideData]="provideData">
         </ax-data-source>
         <ax-selection-column></ax-selection-column>
@@ -76,8 +84,6 @@
         </ax-command-column>
     </ax-data-grid>
 </div>
-
-
 
 <!-- </ng-template>
     </ax-dock-content>

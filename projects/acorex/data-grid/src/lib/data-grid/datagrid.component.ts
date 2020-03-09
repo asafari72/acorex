@@ -59,7 +59,7 @@ export class AXDataGridComponent {
     cellRendererParams: { suppressCount: true, checkbox: true }
   };
 
-  @Input()
+
   treeData: boolean = false;
 
   @Input()
@@ -79,16 +79,16 @@ export class AXDataGridComponent {
 
 
   @Input()
-  keyField: string = 'ID';
+  keyField: string = 'null';
 
   @Input()
-  ParentField: string;
+  parentField: string;
 
   @Input()
   childField: string;
 
   @Input()
-  hasChildField: string;
+  hasChildField: string = 'null';
 
 
   private _searchText: string;
@@ -212,7 +212,6 @@ export class AXDataGridComponent {
     return {
       rowCount: null,
       getRows: (params) => {
-        debugger;
         that.dataSourceSuccessCallback = params.successCallback;
         const loadParams: AXDataSourceReadParams = {};
         loadParams.searchText = that.searchText;
@@ -263,8 +262,9 @@ export class AXDataGridComponent {
   }
 
   ngOnInit(): void {
-    if (this.treeData == true) {
-      this.rowGroupPanelShow = "none"
+    if (this.keyField !== 'null' || this.hasChildField !== 'null') {
+      this.rowGroupPanelShow = 'null';
+      this.treeData = true;
     }
     if (this.remoteOperation) {
       this.rowModelType = 'serverSide';

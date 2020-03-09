@@ -1,0 +1,12 @@
+<ng-container>
+
+    <ul>
+        <li *ngFor="let item of list">
+            {{item.title}}
+        </li>
+    </ul>
+
+    <div ng-include=" 'treeLevel.html'" onload="items = item.childeren"></div>
+</ng-container>
+
+<div ng-include=" 'treeLevel.html'"></div>

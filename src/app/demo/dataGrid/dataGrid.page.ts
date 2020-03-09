@@ -108,26 +108,32 @@ export class DataGridPage implements OnInit {
 
   toolbarItemsEnd: AXMenuItem[] = [
     {
-      name: 'newCustomer',
-      startIcon: 'fas fa-plus',
-      style: 'ax-success',
-      text: 'Add Customer'
+      icon: "fas fa-save success",
+      text: "Add"
+    },
+    {
+      icon: "fas fa-trash danger",
+      text: "Remove",
+      disable: true
     }
   ];
 
+
   commandItems: AXMenuItem[] = [
     {
-      name: 'delete',
-      style: 'ax danger',
-      startIcon: 'fas fa-trash-alt text-danger',
-      visible: true,
-      disable: false
+      name: "edit",
+      style: "ax success",
+      icon: "fas fa-pen text-primary "
+    },
+    {
+      name: "delete",
+      style: "ax danger",
+      icon: "fas fa-trash-alt text-danger"
     }
   ];
   ngOnInit(): void { }
 
   provideData = (e) => {
-    debugger
     if (e.groupKeys.length === 0) {
       return new Promise((resolve) => {
         resolve(this.gridDataRoot);
@@ -152,7 +158,6 @@ export class DataGridPage implements OnInit {
   // };
 
   getServerSideGroupKey(e) {
-    debugger
   }
   autoGroupColumnDef: any = {
     headerName: 'Organisation Hierarchy',

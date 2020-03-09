@@ -18,6 +18,7 @@ import { DatePickerPageModule } from './demo/datepicker/datepicker.module';
 import { PanelBoxPageModule } from './demo/panelbox/panelbox.module';
 import { ToastPageModule } from './demo/toast/toast.module';
 import { MenuPageModule } from './demo/menu/menu.module';
+import { TreeViewPageModule } from './demo/tree-view/tree-view.page.module';
 
 const DEMO = [
   HomePageModule,
@@ -31,7 +32,8 @@ const DEMO = [
   DatePickerPageModule,
   PanelBoxPageModule,
   ToastPageModule,
-  MenuPageModule
+  MenuPageModule,
+  TreeViewPageModule
 ];
 @NgModule({
   declarations: [AppComponent],
@@ -40,4 +42,4 @@ const DEMO = [
   bootstrap: [AppComponent],
   entryComponents: []
 })
-export class AppModule {}
+export class AppModule { }

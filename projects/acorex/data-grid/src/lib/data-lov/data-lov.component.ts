@@ -1,41 +1,87 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ContentChildren, QueryList, Output, EventEmitter, ContentChild } from '@angular/core';
 import { AXBaseSizableComponent, AXBaseInputComponent, AXElementSize } from '@acorex/core';
 import { AXPopupService } from '@acorex/components';
 import { AXDataSourceReadParams } from '@acorex/components';
+import { AXDataLovPopupComponent } from './data-lov-popup/data-lov-popup.component';
+import { AXGridDataColumn } from '../data-grid';
+import { AXDataSourceComponent } from 'projects/acorex/components/src/lib';
+
+
 @Component({
   selector: 'ax-lov',
   templateUrl: './data-lov.component.html',
   styleUrls: ['./data-lov.component.scss']
 })
 export class AXLOVComponent implements AXBaseSizableComponent, AXBaseInputComponent {
-  constructor(private popup: AXPopupService) {}
+  constructor(private popup: AXPopupService) { }
   selectedValues: any[] = ['2', '4'];
 
-  private dataSource: any[] = [
-    { id: '1', title: 'Same Title 1', number: 1000 },
-    { id: '2', title: 'Same Title 2', number: 2000 },
-    { id: '3', title: 'Same Title 3', number: 3000 },
-    { id: '4', title: 'Same Title 4', number: 4000 }
-  ];
+  @ContentChild(AXDataSourceComponent, { static: true })
+  dataSource: AXDataSourceComponent;
 
   @Input()
-  readonly: boolean;
+  readonly: boolean = false;
 
   @Input()
-  disabled: boolean;
+  disabled: boolean = false;
 
   @Input()
   size: AXElementSize = 'md';
 
-  focus(): void {}
+  @Input()
+  label: string;
+
+  @Input()
+  selectionMode: 'single' | 'multiple' = 'single';
+
+
+  @ContentChildren(AXGridDataColumn)
+  private columns: QueryList<AXGridDataColumn>;
+
+  @Output()
+  onSelectionChange: EventEmitter<any> = new EventEmitter<any>();
+
+  focus(): void { }
 
   handleDataReceived = (e: AXDataSourceReadParams) => {
     return Promise.resolve(this.dataSource);
   };
 
-  handleButtonClick() {}
+  handleButtonClick() {
+
+    this.open();
+
+  }
 
   handleSelectChange(e) {
     console.log(e);
+  }
+
+
+  public open(): Promise<any> {
+
+    return new Promise((resolve) => {
+      this.popup.open(AXDataLovPopupComponent, {
+        data: {
+          dataSource: this.dataSource,
+          selectionMode: this.selectionMode,
+          columns: this.columns.toArray()
+        },
+        title: this.label,
+        // size: this.size,
+      }).closed(c => {
+        if (c.data) {
+          this.onSelectionChange.emit(c.data);
+          if (resolve) {
+            resolve(c.data);
+          }
+        } else {
+          if (resolve) {
+            resolve();
+          }
+        }
+      });
+    });
+
   }
 }

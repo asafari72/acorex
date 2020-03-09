@@ -13,6 +13,7 @@ import { DatePickerPage } from './demo/datepicker/datepicker.page';
 import { PanelBoxPage } from './demo/panelbox/panelbox.page';
 import { ToastPage } from './demo/toast/toast.page';
 import { MenuPage } from './demo/menu/menu.page';
+import { TreeView } from './demo/tree-view/tree-view.page';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -27,7 +28,9 @@ export const routes: Routes = [
   { path: 'i18n', pathMatch: 'full', component: I18nPage },
   { path: 'datagrid', pathMatch: 'full', component: DataGridPage },
   { path: 'datepicker', pathMatch: 'full', component: DatePickerPage },
-  { path: 'toast', pathMatch: 'full', component: ToastPage }
+  { path: 'toast', pathMatch: 'full', component: ToastPage },
+  { path: 'treeView', pathMatch: 'full', component: TreeView }
+
 ];
 
 @NgModule({
@@ -35,4 +38,4 @@ export const routes: Routes = [
   exports: [RouterModule]
 })
 
-export class AppRoutingModule {}
+export class AppRoutingModule { }
