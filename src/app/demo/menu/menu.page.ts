@@ -8,8 +8,8 @@ import { AXMenuItem } from '@acorex/core';
 export class MenuPage {
   constructor() {}
   menuItems: AXMenuItem[] = [
-    { text: 'New', startIcon: 'fas fa-rocket', style: 'ax primary' },
-    { text: 'Remove', startIcon: 'fas fa-rocket' , style: 'ax success' },
+    { text: 'New', startIcon: 'fas fa-rocket', style: 'ax primary', disable: true },
+    { text: 'Remove', startIcon: 'fas fa-rocket', style: 'ax success' },
     { text: 'Remove', startIcon: 'fas fa-rocket', endIcon: 'fas fa-rocket' },
     { text: 'Update', startIcon: 'fas fa-rocket' },
     {
@@ -17,7 +17,11 @@ export class MenuPage {
       startIcon: 'fas fa-rocket',
       items: [
         { text: 'New', startIcon: 'fas fa-rocket' },
-        { text: 'Remove', startIcon: 'fas fa-rocket' },
+        {
+          text: 'Remove',
+          startIcon: 'fas fa-rocket',
+          items: [{ text: 'New' }, { text: 'Remove' }, { text: 'Update' }]
+        },
         { text: 'Update', startIcon: 'fas fa-rocket' }
       ]
     },

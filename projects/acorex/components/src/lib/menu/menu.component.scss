@@ -152,7 +152,12 @@
             li {
                 position: relative;
                 cursor: pointer;
-
+                &.disabled {
+                    background: var(--ax-gray-trans-dark-color) !important;
+                    border-color: var(--ax-gray-trans-dark-color) !important;
+                    color: var(--ax-gray-dark-color) !important;
+                    cursor: not-allowed;
+                }
                 .sub-icon-side {
                     height: 100%;
                     display: flex;
@@ -200,6 +205,8 @@
                 }
 
                 .ax-toolbar-menu-item-text {
+                   
+
                     span {
                         padding: 0 0.5em;
                     }

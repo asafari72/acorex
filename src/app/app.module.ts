@@ -20,6 +20,7 @@ import { ToastPageModule } from './demo/toast/toast.module';
 import { MenuPageModule } from './demo/menu/menu.module';
 import { TreeViewPageModule } from './demo/tree-view/tree-view.page.module';
 
+
 const DEMO = [
   HomePageModule,
   ButtonsPageModule,

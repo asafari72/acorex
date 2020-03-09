@@ -2,7 +2,7 @@
   <ul class="root" [class.horizontal]="direction=='horizontal'" [class.vertical]="direction=='vertical'" #root>
     <ng-template #recursiveList let-list>
       <ng-container *ngFor="let item of list;trackBy:trackByItem">
-        <li class="ax-toolbar-menu-item"  [class.subIcon]='item.items' [class.startIcon]='item.startIcon' [class.endIcon]='item.endIcon' *ngIf="item.visible!=false" (click)="onItemClick($event, item)"
+        <li class="ax-toolbar-menu-item ax" [class.disabled]='item.disable'  [class.subIcon]='item.items' [class.startIcon]='item.startIcon' [class.endIcon]='item.endIcon' *ngIf="item.visible!=false" (click)="onItemClick($event, item)"
           [ngClass]="item.style" [class.selected]="item.selected" [attr.title]="item.tooltip ? item.tooltip : null"
           [attr.data-uid]="item.uid"
           [class.split]="item.split">

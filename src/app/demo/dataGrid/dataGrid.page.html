@@ -1,97 +1,68 @@
-<!-- <ax-page>
+<label>
+  grid
+</label>
+<div style="height: 400px;">
+  <ax-data-grid #grid [selectionMode]="'multiple'" [remoteOperation]="true" [autoGroupColumnDef]="autoGroupColumnDef"
+    isServerSideGroup="true" (getServerSideGroupKey)="getServerSideGroupKey($event)">
+
     <ax-toolbar>
-        <div></div>
-        <ax-toolbar-menu [items]="toolbarItemsEnd" (itemClick)="handleMenuItemClick($event)">
-        </ax-toolbar-menu>
+      <ax-toolbar-menu [items]="toolbarItemsEnd">
+      </ax-toolbar-menu>
+      <div></div>
+      <ax-toolbar-search></ax-toolbar-search>
     </ax-toolbar>
-    <ax-page-content>
-        <ax-dock-layout>
-            <ax-dock-panel type="row"> -->
-<!-- <ax-dock-panel type="stack" [size]="20">
 
-                    <ax-dock-content caption="Filters">
-                        <ng-template>
-                            <ax-filter-panel [mode]="'immediate'" [groups]="filterGroups"
-                                [predefinedFilters]="savedList" #filterPanel (filterChange)="onFilterChange($event)">
-                            </ax-filter-panel>
-                        </ng-template>
-                    </ax-dock-content>
-                </ax-dock-panel> -->
+    <ax-data-source [provideData]="provideData">
+    </ax-data-source>
+
+    <ax-selection-column></ax-selection-column>
+    <ax-text-column field="jobTitle" caption="jobTitle" [width]="120"></ax-text-column>
+    <ax-text-column field="employmentType" caption="employmentType" [width]="90">
+    </ax-text-column>
+    <ax-command-column [items]="commandItems" (itemClick)="onCommandItemClick($event)">
+    </ax-command-column>
+  </ax-data-grid>
+</div>
+
+<label>
+  Tree
+</label>
+
+<div style="height: 400px;">
+  <ax-data-grid #grid [selectionMode]="'multiple'" [keyField]="'employmentType'" [hasChildField]="'hasChild'"
+    [remoteOperation]="true" [autoGroupColumnDef]="autoGroupColumnDef" isServerSideGroup="true"
+    (getServerSideGroupKey)="getServerSideGroupKey($event)">
+    <ax-data-source [provideData]="provideData">
+    </ax-data-source>
+    <ax-selection-column></ax-selection-column>
+    <ax-text-column field="jobTitle" caption="jobTitle" [width]="120"></ax-text-column>
+    <ax-text-column field="employmentType" caption="employmentType" [width]="90">
+    </ax-text-column>
+    <ax-command-column [items]="commandItems" (itemClick)="onCommandItemClick($event)">
+    </ax-command-column>
+  </ax-data-grid>
+</div>
+
+
+<label>
+  group By
+</label>
+
+<div style="height: 400px;">
+  <ax-data-grid #grid [selectionMode]="'multiple'" [remoteOperation]="true" [autoGroupColumnDef]="autoGroupColumnDef"
+    isServerSideGroup="true" (getServerSideGroupKey)="getServerSideGroupKey($event)">
+    <ax-data-source [provideData]="provideData">
+    </ax-data-source>
+    <ax-selection-column></ax-selection-column>
+    <ax-text-column rowGroupIndex=1 field="jobTitle" caption="jobTitle" [width]="120"></ax-text-column>
+    <ax-text-column field="employmentType" caption="employmentType" [width]="90">
+    </ax-text-column>
+    <ax-command-column [items]="commandItems" (itemClick)="onCommandItemClick($event)">
+    </ax-command-column>
+  </ax-data-grid>
+</div>
+
 <!-- 
-<ax-dock-panel type="stack" [size]="60">
-    <ax-dock-content caption="Suppliers">
-        <ng-template> -->
-<label>
-    grid
-</label>
-<div style="height: 400px;">
-    <ax-data-grid #grid [selectionMode]="'multiple'" [remoteOperation]="true" [autoGroupColumnDef]="autoGroupColumnDef"
-        isServerSideGroup="true" (getServerSideGroupKey)="getServerSideGroupKey($event)">
-
-        <ax-toolbar>
-            <ax-toolbar-menu [items]="toolbarItemsEnd">
-            </ax-toolbar-menu>
-            <div></div>
-            <ax-toolbar-search></ax-toolbar-search>
-        </ax-toolbar>
-
-        <ax-data-source [provideData]="provideData">
-        </ax-data-source>
-
-        <ax-selection-column></ax-selection-column>
-        <ax-text-column field="jobTitle" caption="jobTitle" [width]="120"></ax-text-column>
-        <ax-text-column field="employmentType" caption="employmentType" [width]="90">
-        </ax-text-column>
-        <ax-command-column [items]="commandItems" (itemClick)="onCommandItemClick($event)">
-        </ax-command-column>
-    </ax-data-grid>
-</div>
-
-<label>
-    Tree
-</label>
-
-<div style="height: 400px;">
-    <ax-data-grid #grid [selectionMode]="'multiple'" [keyField]="'employmentType'" [hasChildField]="'hasChild'"
-        [remoteOperation]="true" [autoGroupColumnDef]="autoGroupColumnDef" isServerSideGroup="true"
-        (getServerSideGroupKey)="getServerSideGroupKey($event)">
-        <ax-data-source [provideData]="provideData">
-        </ax-data-source>
-        <ax-selection-column></ax-selection-column>
-        <ax-text-column field="jobTitle" caption="jobTitle" [width]="120"></ax-text-column>
-        <ax-text-column field="employmentType" caption="employmentType" [width]="90">
-        </ax-text-column>
-        <ax-command-column [items]="commandItems" (itemClick)="onCommandItemClick($event)">
-        </ax-command-column>
-    </ax-data-grid>
-</div>
-
-
-<label>
-    group By
-</label>
-
-<div style="height: 400px;">
-    <ax-data-grid #grid [selectionMode]="'multiple'" [remoteOperation]="true" [autoGroupColumnDef]="autoGroupColumnDef"
-        isServerSideGroup="true" (getServerSideGroupKey)="getServerSideGroupKey($event)">
-        <ax-data-source [provideData]="provideData">
-        </ax-data-source>
-        <ax-selection-column></ax-selection-column>
-        <ax-text-column rowGroupIndex=1 field="jobTitle" caption="jobTitle" [width]="120"></ax-text-column>
-        <ax-text-column field="employmentType" caption="employmentType" [width]="90">
-        </ax-text-column>
-        <ax-command-column [items]="commandItems" (itemClick)="onCommandItemClick($event)">
-        </ax-command-column>
-    </ax-data-grid>
-</div>
-
-<!-- </ng-template>
+ </ng-template>
     </ax-dock-content>
-</ax-dock-panel> -->
-
-<!-- <ax-dock-panel type="stack" [size]="20">
-                </ax-dock-panel>
-            </ax-dock-panel>
-        </ax-dock-layout>
-    </ax-page-content>
-</ax-page> -->
+</ax-dock-panel>  -->
