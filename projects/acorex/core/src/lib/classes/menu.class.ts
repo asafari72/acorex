@@ -11,7 +11,7 @@ export class AXBaseMenuItem {
   groupName?: string;
   data?: any;
   style?: string;
-  orderIndex ? = 0;
+  orderIndex? = 0;
   endIcon?: string;
   startIcon?: string;
 }
@@ -23,9 +23,9 @@ export class AXMenuItem extends AXBaseMenuItem {
 }
 
 export class AXButtonItem extends AXBaseMenuItem {
-  dropdown ? = false;
-  submitBehavior ? = false;
-  cancelBehavior ? = false;
+  dropdown? = false;
+  submitBehavior? = false;
+  cancelBehavior? = false;
 }
 
 export class AXCheckItem {
