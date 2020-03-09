@@ -7,7 +7,7 @@ import { AXFilterColumnGroup } from 'projects/acorex/components/src/lib';
   styleUrls: ['./dataGrid.page.scss']
 })
 export class DataGridPage implements OnInit {
-  constructor() { }
+  constructor() {}
 
   groupDefaultExpanded = -1;
   gridDataChild: any = [
@@ -29,9 +29,7 @@ export class DataGridPage implements OnInit {
       employmentType: 'Permanent',
       hasChild: false
     }
-  ]
-
-
+  ];
 
   gridDataRoot: any = [
     {
@@ -87,12 +85,11 @@ export class DataGridPage implements OnInit {
       jobTitle: 'Sales Manager',
       employmentType: 'Permanent',
       hasChild: true
-    },
-
+    }
   ];
 
-  handleMenuItemClick(e) { }
- 
+  handleMenuItemClick(e) {}
+
   filterGroups: AXFilterColumnGroup[] = [
     {
       caption: 'Information',
@@ -106,35 +103,32 @@ export class DataGridPage implements OnInit {
     }
   ];
 
-  onFilterChange(e){
-
-      }
+  onFilterChange(e) {}
   toolbarItemsEnd: AXMenuItem[] = [
     {
-      icon: "fas fa-save success",
-      text: "Add"
+      icon: 'fas fa-save success',
+      text: 'Add'
     },
     {
-      icon: "fas fa-trash danger",
-      text: "Remove",
+      icon: 'fas fa-trash danger',
+      text: 'Remove',
       disable: true
     }
   ];
 
-
   commandItems: AXMenuItem[] = [
     {
-      name: "edit",
-      style: "ax success",
-      icon: "fas fa-pen text-primary "
+      name: 'edit',
+      style: 'ax success',
+      icon: 'fas fa-pen text-primary '
     },
     {
-      name: "delete",
-      style: "ax danger",
-      icon: "fas fa-trash-alt text-danger"
+      name: 'delete',
+      style: 'ax danger',
+      icon: 'fas fa-trash-alt text-danger'
     }
   ];
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   provideData = (e) => {
     if (e.groupKeys.length === 0) {
@@ -146,13 +140,10 @@ export class DataGridPage implements OnInit {
         resolve(this.gridDataChild);
       });
     }
-
-
-
   };
 
   columnGroupOpened(e) {
-    debugger
+    debugger;
   }
 
   // getDataPath = (item: any) => {
@@ -160,11 +151,10 @@ export class DataGridPage implements OnInit {
   //   return item.orgHierarchy;
   // };
 
-  getServerSideGroupKey(e) {
-  }
+  getServerSideGroupKey(e) {}
   autoGroupColumnDef: any = {
     headerName: 'Organisation Hierarchy',
     cellRendererParams: { suppressCount: true }
   };
-  onCommandItemClick(e) { }
+  onCommandItemClick(e) {}
 }
